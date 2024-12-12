@@ -1,0 +1,59 @@
+.hero {
+    /* position: absolute; */
+    /* top: 20%; */
+    width: 100%;
+    /* padding: 2rem; */
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.hero span {
+    font-size: 1rem;
+}
+
+.heroLottie {
+    height: 20rem;
+    width: 20rem;
+    /* background-color: black; */
+
+}
+
+
+.hero h1 {
+
+    font-size: 2.9rem;
+    font-weight: 870;
+    /* letter-spacing: 1px; */
+    margin: 0;
+    /* background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%); */
+    background-size: 300% 100%;
+    color: #00c6fb;
+    /* background-image: linear-gradient(to right, #00c6fb 0%, #005bea 100%); */
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    /* background-clip: text; */
+    /* Fallback for some browsers */
+    /* color: transparent; */
+    animation: moveGradient 5s infinite linear;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.hero p {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
