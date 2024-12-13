@@ -4,6 +4,12 @@
 
 :root {
   --main_blue: #00c7ff;
+  --section-title-gradient: linear-gradient(
+    309deg,
+    #a6ddff 2.25225%,
+    #33c2ff 48.0785%,
+    #00c7ff 100%
+  );
 }
 
 body {

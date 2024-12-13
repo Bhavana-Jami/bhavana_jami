@@ -1,9 +1,15 @@
+'use client'
+
 import React, { useState, useEffect } from "react";
+import { motion, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const TabsMenu = () => {
   const [activeSection, setActiveSection] = useState("about");
   const [isSticky, setIsSticky] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const { scrollY } = useScroll();
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +17,8 @@ const TabsMenu = () => {
       const heroBottom = heroSection
         ? heroSection.getBoundingClientRect().bottom
         : 0;
+
+      // Make the navbar sticky when the hero section is fully out of view
       setIsSticky(heroBottom <= 0);
 
       const sections = ["about", "projects", "skills", "contact", "resume"];
@@ -33,10 +41,23 @@ const TabsMenu = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      if (latest < lastScrollY) {
+        // Scrolling up
+        setIsVisible(true);
+      } else if (latest > 100 && latest > lastScrollY) {
+        // Scrolling down and past the threshold
+        setIsVisible(false);
+      }
+      setLastScrollY(latest);
+    });
+  }, [scrollY, lastScrollY]);
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = isSticky ? 64 : 0; // Adjust this value based on your nav height
+      const navHeight = isSticky ? 84 : 0; // Adjust this value based on your nav height
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
@@ -55,35 +76,50 @@ const TabsMenu = () => {
   ];
 
   return (
-    <nav
+    <motion.nav
       className={cn(
-        "z-50 w-full transition-all duration-300 ease-in-out",
+        "z-40 max-w-4xl mx-auto transition-all duration-300 ease-in-out",
         isSticky
-          ? "fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm"
-          : "relative bg-transparent"
+          ? "fixed top-0 -translate-x-1/2"
+          : "relative"
       )}
+      initial={false}
+      animate={{
+        y: isVisible ? 0 : -100,
+        opacity: isVisible ? 1 : 0,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ul className="flex justify-center space-x-2 p-1 rounded-full bg-grey-1000/50">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <ul className="flex justify-center space-x-2 p-1 rounded-full bg-[#121226] shadow-lg">
           {tabs.map((tab) => (
             <li key={tab.id}>
-              <button
+              <motion.button
+                style={{ 
+                  backgroundColor: activeSection === tab.id ? "#00c8ff" : "",
+                }}
                 onClick={() => scrollToSection(tab.id)}
                 className={cn(
                   "px-4 py-2 rounded-full text-sm transition-all duration-100 ease-in-out",
                   activeSection === tab.id
-                    ? "bg-blue-500 text-white shadow-lg shadow-blue-500/50"
+                    ? "text-purple-950 shadow-blue-600/50 font-bold"
                     : "text-gray-300 hover:text-white hover:bg-gray-700/50"
                 )}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {tab.label}
-              </button>
+              </motion.button>
             </li>
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
 export default TabsMenu;
+
