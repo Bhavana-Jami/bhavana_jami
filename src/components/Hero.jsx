@@ -17,7 +17,7 @@ const Hero = () => {
     //   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Bhavana Jami</h1>
     //   <p>I love to create, develop beautiful functional websites.</p>
     // </div>
-    <main className="flex min-h-screen flex-col items-center" id="hero">
+    <main className="flex h-screen flex-col items-center justify-center " id="hero">
       {/* Hero Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center">
         {/* <div className="relative  "> */}
@@ -43,7 +43,7 @@ const Hero = () => {
           Bhavana Jami
         </h1>
         <p className="text-xl text-center text-zinc-100 max-w-[610px] mb-8 ">
-          I'm a Frontend Developer with 2 years of exeperience in creating beautiful, functional websites that bring ideas to
+          I'm a Frontend Developer with 2 years of professional exeperience in creating beautiful, functional websites that bring ideas to
           life.
         </p>
         <TabsMenu />

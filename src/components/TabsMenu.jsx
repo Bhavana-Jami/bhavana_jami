@@ -94,19 +94,19 @@ const TabsMenu = () => {
       }}
     >
       <div className="px-4 sm:px-6 lg:px-8">
-        <ul className="flex justify-center space-x-2 p-1 rounded-full bg-[#121226] shadow-lg">
+        <ul className="flex justify-center space-x-2 p-1 rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
           {tabs.map((tab) => (
             <li key={tab.id}>
               <motion.button
                 style={{ 
-                  backgroundColor: activeSection === tab.id ? "#00c8ff" : "",
+                  backgroundColor: activeSection === tab.id ? "rgba(0, 200, 255, 0.3)" : "",
                 }}
                 onClick={() => scrollToSection(tab.id)}
                 className={cn(
                   "px-4 py-2 rounded-full text-sm transition-all duration-100 ease-in-out",
                   activeSection === tab.id
-                    ? "text-purple-950 shadow-blue-600/50 font-bold"
-                    : "text-gray-300 hover:text-white hover:bg-gray-700/50"
+                    ? "text-white shadow-blue-600/50 font-bold"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
                 )}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
