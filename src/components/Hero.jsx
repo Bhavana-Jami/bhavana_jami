@@ -1,50 +1,65 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Hero.css";
 import Lottie from "lottie-react";
 import heroLottie from "../assets/heroLottie.json";
-import { Button } from "@/components/ui/button";
-import TabsMenu from "./TabsMenu";
 import imavailabletowork from "../assets/imavailabletowork.json";
+import TabsMenu from "./TabsMenu";
+import { motion } from "framer-motion";
+
 const Hero = () => {
+  const [showBubble, setShowBubble] = useState(false);
+  const bubbleRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBubble(true);
+    }, 4000); // Delay the bubble appearance by 1 second
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (showBubble && bubbleRef.current) {
+      bubbleRef.current.play();
+    }
+  }, [showBubble]);
+  const bubbleVariants = {
+    hidden: {
+      scale: 0.6,
+      opacity: 0.5,
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeIn",
+      },
+    },
+  };
   return (
-    // <div className="hero">
-    //   {/* <div className="heroLottieContainer"> */}
-
-    //   <Lottie animationData={heroLottie} loop={true} className="heroLottie" />
-    //   {/* </div> */}
-
-    //   <span>Hello </span>
-    //   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Bhavana Jami</h1>
-    //   <p>I love to create, develop beautiful functional websites.</p>
-    // </div>
-    <main className="flex h-screen flex-col items-center justify-center " id="hero">
-      {/* Hero Section */}
+    <main
+      className="flex h-screen flex-col items-center justify-center"
+      id="hero"
+    >
       <section className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center">
-        {/* <div className="relative  "> */}
-        {/* <div className="w-70 h-70 rounded-full bg-black blur-3 opacity-3 " /> */}
+        <div className="relative inline-block">
+          <Lottie
+            animationData={heroLottie}
+            loop={true}
+            className="heroLottie w-64 h-64"
+          />
 
-        <Lottie
-          animationData={heroLottie}
-          loop={true}
-          className="heroLottie "
-        />
-        {/* </div> */}
-        {/* <p className="text-lg mb-4">Hello</p> */}
-        {/* <div className="absolute  top-30 -right-30 flex items-center">
-          <div className="relative">
-            <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-blue-500 rotate-45" />
-           <Lottie animationData={imavailabletowork} loop={true}/> 
-            <p className="text-lg bg-blue-500 px-4 py-1 rounded-full text-white">
-              Hello
-            </p>
-          </div>
-        </div> */}
+          <div class="tooltip">Hi, I'm available to work!</div>
+        </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
           Bhavana Jami
         </h1>
-        <p className="text-xl text-center text-zinc-100 max-w-[610px] mb-8 ">
-          I'm a Frontend Developer with 2 years of professional exeperience in creating beautiful, functional websites that bring ideas to
-          life.
+        <p className="text-xl text-center text-zinc-100 max-w-[610px] mb-8">
+          I'm a Frontend Developer with 2 years of professional experience in
+          creating beautiful, functional websites that bring ideas to life.
         </p>
         <TabsMenu />
       </section>

@@ -68,10 +68,10 @@ const TabsMenu = () => {
   };
 
   const tabs = [
-    { id: "about", label: "About Me" },
+    { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact Me" },
+    { id: "contact", label: "Contact" },
     { id: "resume", label: "Resume" },
   ];
 
