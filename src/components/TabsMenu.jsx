@@ -78,7 +78,7 @@ const TabsMenu = () => {
   return (
     <motion.nav
       className={cn(
-        "z-40 max-w-4xl mx-auto transition-all duration-300 ease-in-out",
+        "z-40 max-w-4xl  transition-all duration-300 ease-in-out sm:mx-5",
         isSticky
           ? "fixed top-0 -translate-x-1/2"
           : "relative"
@@ -93,7 +93,7 @@ const TabsMenu = () => {
         ease: "easeInOut",
       }}
     >
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-2 lg:px-8 ">
         <ul className="flex justify-center space-x-2 p-1 rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
           {tabs.map((tab) => (
             <li key={tab.id}>

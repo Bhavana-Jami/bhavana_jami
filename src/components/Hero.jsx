@@ -5,7 +5,7 @@ import heroLottie from "../assets/heroLottie.json";
 import imavailabletowork from "../assets/imavailabletowork.json";
 import TabsMenu from "./TabsMenu";
 import { motion } from "framer-motion";
-
+import { Button } from "@/components/ui/button"
 const Hero = () => {
   const [showBubble, setShowBubble] = useState(false);
   const bubbleRef = useRef(null);
@@ -41,7 +41,7 @@ const Hero = () => {
   };
   return (
     <main
-      className="flex h-screen flex-col items-center justify-center"
+      className="flex h-screen flex-col items-center justify-center sm:mx-4"
       id="hero"
     >
       <section className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center">
@@ -61,6 +61,12 @@ const Hero = () => {
           I'm a Frontend Developer with 2 years of professional experience in
           creating beautiful, functional websites that bring ideas to life.
         </p>
+        {/* <Button
+          className="bg-gradient-to-r from-cyan-400 to-purple-600 hover:from-cyan-500 hover:to-purple-700 text-white"
+          asChild
+        >
+          <a href="#contact">Contact</a>
+        </Button> */}
         <TabsMenu />
       </section>
     </main>

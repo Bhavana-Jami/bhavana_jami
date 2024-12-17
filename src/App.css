@@ -3,7 +3,7 @@
 .App {
   font-family: "Montserrat", sans-serif;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
@@ -17,7 +17,7 @@
   color: #e5e7eb;
   flex-direction: column;
 }
-.title{
+/* .title{
   background-color: #21D4FD;
   background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
   
@@ -27,4 +27,4 @@
   color: transparent;
 
 
-}
+} */
