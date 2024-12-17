@@ -1,108 +1,95 @@
-import { motion } from 'framer-motion'
-import { Copy, Check, Github, Linkedin, Twitter, Mail } from 'lucide-react'
-import { useState } from 'react'
+import React, { useState } from "react";
+import {
+  Mail,
+  Github,
+  Twitter,
+  Linkedin,
+  Youtube,
+  Instagram,
+  Copy,
+  Check,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
-export default function Contact() {
-  const [copied, setCopied] = useState(false)
-  const email = "your.email@example.com"
+const SocialLink = ({ icon, href }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="p-3 text-zinc-400 hover:text-zinc-100 transition-colors rounded-full hover:bg-zinc-800"
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    {icon}
+  </motion.a>
+);
 
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch (err) {
-      console.error('Failed to copy:', err)
-    }
-  }
+const ContactPage = () => {
+  const [copied, setCopied] = useState(false);
+  const email = "contact@example.com";
 
-  const socialLinks = [
-    {
-      name: 'GitHub',
-      icon: Github,
-      url: 'https://github.com/yourusername',
-    },
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      url: 'https://linkedin.com/in/yourusername',
-    },
-    {
-      name: 'Twitter',
-      icon: Twitter,
-      url: 'https://twitter.com/yourusername',
-    },
-  ]
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
-    <section className="h-screen text-white py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
-      <div className="flex-grow max-w-3xl mx-auto w-full">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl font-bold text-center text-sky-400"
-        >
-          Contact Me
-        </motion.h1>
+    <div
+      id="contact"
+      className="min-h-screen  text-zinc-100 flex flex-col"
+    >
+      <main className="flex-grow flex items-center justify-center px-6 py-12">
+        <div className="max-w-3xl w-full space-y-16">
+          {/* Main Contact Section */}
+          <motion.div
+            className="text-center space-y-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-2xl sm:text-5xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">
+              Let's connect
+            </h1>
 
-        {/* Email Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-16"
-        >
-          <div className="flex flex-col items-center space-y-4">
-            <Mail className="w-8 h-8 text-[#00c8ff]" />
-            <button
-              onClick={handleCopyEmail}
-              className="group relative flex items-center space-x-2 bg-[#121226] px-6 py-3 rounded-full hover:bg-[#1a1a36] transition-colors duration-300"
-            >
-              <span className="text-gray-300">{email}</span>
-              {copied ? (
-                <Check className="w-5 h-5 text-green-500" />
-              ) : (
-                <Copy className="w-5 h-5 text-[#00c8ff] group-hover:text-white transition-colors duration-300" />
-              )}
-            </button>
-          </div>
-        </motion.div>
+            <div className="space-y-4">
+              <p className="text-base sm:text-xl text-zinc-400">
+                You can reach out to me via this email
+              </p>
+              <div className="flex justify-center items-center space-x-2">
+                <span className="text-xl sm:text-xl text-purple-800">
+                  {email}
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={copyEmail}
+                    className="text-purple-700 hover:text-purple-700 "
+                  >
+                    {copied ? (
+                      <Check className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <Copy className="h-5 w-5" />
+                    )}
+                  </Button>
+                </span>
+              </div>
+            </div>
+            <div className="text-2xl font-semibold  bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">My Socials</div>
+            <div className="flex justify-center space-x-4">
+              <SocialLink icon={<Github />} href="https://github.com" />
+              <SocialLink icon={<Youtube />} href="https://youtube.com" />
+              <SocialLink icon={<Linkedin />} href="https://linkedin.com" />
+              <SocialLink icon={<Instagram />} href="https://instagram.com" />
+            </div>
+          </motion.div>
+        </div>
+      </main>
+      <footer className="py-6 text-center text-zinc-500 text-sm">
+        <p>© 2023 <a href="#">Bhavana Jami</a>. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
 
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center space-x-8"
-        >
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-3 rounded-full bg-[#121226] hover:bg-[#1a1a36] transition-colors duration-300"
-            >
-              <social.icon className="w-6 h-6 text-[#00c8ff]" />
-              <span className="sr-only">{social.name}</span>
-            </motion.a>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Footer */}
-      {/* <motion.footer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="text-center text-sm text-gray-500"
-      >
-        <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
-      </motion.footer> */}
-    </section>
-  )
-}
-
+export default ContactPage;

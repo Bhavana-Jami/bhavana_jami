@@ -163,8 +163,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className=" text-white py-16 px-4 sm:px-6 lg:px-9" id='projects'>
-      <div className="max-w-5xl mx-auto">
+    <div className=" text-white py-16 px-4 sm:px-6lg:px-9" id='projects'>
+      <div className="max-w-5xl mx-auto  sm:px-6">
       <h2 className="title text-3xl md:text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-l from-white to-purple-900 ">
           Featured Projects
          </h2>

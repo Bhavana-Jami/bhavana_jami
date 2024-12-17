@@ -5,7 +5,7 @@ import { motion, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const TabsMenu = () => {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("projects");
   const [isSticky, setIsSticky] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const { scrollY } = useScroll();
@@ -68,7 +68,7 @@ const TabsMenu = () => {
   };
 
   const tabs = [
-    { id: "about", label: "About" },
+    // { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
     { id: "contact", label: "Contact" },
@@ -78,7 +78,7 @@ const TabsMenu = () => {
   return (
     <motion.nav
       className={cn(
-        "z-40 max-w-4xl  transition-all duration-300 ease-in-out sm:mx-5",
+        "z-40 max-w-4xl  transition-all duration-300 ease-in-out",
         isSticky
           ? "fixed top-0 -translate-x-1/2"
           : "relative"
@@ -93,7 +93,7 @@ const TabsMenu = () => {
         ease: "easeInOut",
       }}
     >
-      <div className="px-4 sm:px-2 lg:px-8 ">
+      <div className="px-4 sm:px-3 lg:px-8">
         <ul className="flex justify-center space-x-2 p-1 rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
           {tabs.map((tab) => (
             <li key={tab.id}>

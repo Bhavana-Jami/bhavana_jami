@@ -1,20 +1,18 @@
-"use client";
-
 import { motion } from "framer-motion";
-import { Code, Palette } from "lucide-react";
+import { Code, Palette, Pen } from "lucide-react";
 
 export default function About() {
   return (
     <section
-      className="h-screen relative z-10 px-4 sm:px-6 lg:px-8 w-10/12 "
+      className="h-screen flex items-center justify-center px-4 sm:px-3 lg:px-8"
       id="about"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* <div className="max-w-6xl mx-auto"> */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className=" rounded-1xl shadow-2xl overflow-hidden h-screen"
+          className=" rounded-1xl shadow-2xl max-w-4xl overflow-hidden h-screen bg-black/55 flex justify-center items-center"
         >
           <div className="p-8 sm:p-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#00c8ff] mb-4">
@@ -36,9 +34,10 @@ export default function About() {
               >
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-[#00c8ff]/10 rounded-full flex items-center justify-center">
-                    <Palette className="w-6 h-6 text-[#00c8ff]" />
+                  <Code className="w-6 h-6 text-[#00c8ff]" />
+
                   </div>
-                  <h3 className="text-lg font-semibold text-white">Designer</h3>
+                  <h3 className="text-lg font-semibold text-white">Work Experience</h3>
                 </div>
                 <p className="text-sm text-gray-400">
                   I value simple content structure, clean design patterns, and
@@ -73,10 +72,12 @@ export default function About() {
               >
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-[#00c8ff]/10 rounded-full flex items-center justify-center">
-                    <Code className="w-6 h-6 text-[#00c8ff]" />
+                  <Pen className="w-6 h-6 text-[#00c8ff]" />
+
                   </div>
+
                   <h3 className="text-lg font-semibold text-white">
-                    Frontend Developer
+                   I like to write
                   </h3>
                 </div>
                 <p className="text-sm text-gray-400">
@@ -105,7 +106,7 @@ export default function About() {
             </div>
           </div>
         </motion.div>
-      </div>
+      {/* </div> */}
     </section>
   );
 }

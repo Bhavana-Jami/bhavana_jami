@@ -1,137 +1,137 @@
-import React from 'react';
-import { 
-    SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiRedux,
-    SiFigma, SiAdobexd, SiSketch, SiNodedotjs, SiExpress, 
-    SiPython, SiDjango, SiMongodb, SiPostgresql, SiMysql, 
-    SiFirebase, SiRedis, SiDocker, SiKubernetes, SiGit,
-    SiHtml5, SiCss3, SiJavascript, SiGraphql
-  } from 'react-icons/si'
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  SiReact,
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiPython,
+  SiGraphql,
+  SiDocker,
+} from "react-icons/si";
 
-const skills = [
-  { 
-    name: 'React', 
-    icon: SiReact,
-    projects: 15,
-    expertise: 'primary',
-    span: 'col-span-2 row-span-2'
-  },
-  { 
-    name: 'JavaScript', 
-    icon: SiJavascript,
-    projects: 20,
-    expertise: 'primary',
-    span: 'col-span-2 row-span-2'
-  },
-  { 
-    name: 'Tailwind CSS', 
-    icon: SiTailwindcss,
-    projects: 8,
-    expertise: 'secondary',
-    span: 'col-span-1 row-span-1'
-  },
-  { 
-    name: 'Redux', 
-    icon: SiRedux,
-    projects: 6,
-    expertise: 'secondary',
-    span: 'col-span-1 row-span-1'
-  },
-  { 
-    name: 'Node.js', 
-    icon: SiNodedotjs,
-    projects: 10,
-    expertise: 'primary',
-    span: 'col-span-2 row-span-1'
-  },
-  { 
-    name: 'MongoDB', 
-    icon: SiMongodb,
-    projects: 5,
-    expertise: 'secondary',
-    span: 'col-span-1 row-span-1'
-  },
-  { 
-    name: 'Firebase', 
-    icon: SiFirebase,
-    projects: 4,
-    expertise: 'secondary',
-    span: 'col-span-1 row-span-1'
-  },
-  { 
-    name: 'Git', 
-    icon: SiGit,
-    projects: 20,
-    expertise: 'primary',
-    span: 'col-span-2 row-span-1'
-  },
-  { 
-    name: 'HTML5', 
-    icon: SiHtml5,
-    projects: 20,
-    expertise: 'primary',
-    span: 'col-span-1 row-span-1'
-  },
-  { 
-    name: 'CSS3', 
-    icon: SiCss3,
-    projects: 20,
-    expertise: 'primary',
-    span: 'col-span-1 row-span-1'
-  }
-];
+// Skills data
+const skills = {
+  expertSkills: [
+    { name: "React", icon: SiReact },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+  ],
+  familiarWith: [
+    { name: "Node.js", icon: SiNodedotjs },
+    { name: "Python", icon: SiPython },
+    { name: "GraphQL", icon: SiGraphql },
+    { name: "Docker", icon: SiDocker },
+  ],
+};
 
-const SkillTile = ({ skill, index }) => {
-  const baseColors = {
-    primary: 'bg-purple-700 hover:bg-purple-800',
-    secondary: 'bg-blue-700 hover:bg-blue-800'
-  };
+// Skill Bubble Component
+const SkillBubble = ({ skill }) => (
+  <motion.div
+    className="flex items-center bg-gradient-to-r from-cyan-700 to-purple-700 rounded-full px-4 py-2 text-white text-sm font-medium"
+    initial={{ scale: 0.8, opacity: 0 }}
+    whileInView={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    {React.createElement(skill.icon, { className: "mr-2 text-lg" })}
+    {skill.name}
+  </motion.div>
+);
 
-  const IconComponent = skill.icon;
-  const iconSize = skill.span.includes('col-span-2') ? 32 : 20;
+// Skill Section Component
+const ExSkillSection = ({ title, skills, description }) => (
+  <motion.div
+    className="mb-12"
+    initial={{ y: 50, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
+    className="flex"
+  >
+    <div className="flex flex-col  md:items-center mb-4 ">
+      <h2 className="text-2xl font-bold text-zinc-100 md:w-1/4">{title}</h2>
+      {description && (
+        <p className="text-zinc-400 mt-2 md:mt-0 md:w-3/4">{description}</p>
+      )}
+    </div>
+    <div className="flex flex-wrap gap-3">
+      {skills && skills.length > 0
+        ? skills.map((skill) => <SkillBubble key={skill.name} skill={skill} />)
+        : null}
+    </div>
+  </motion.div>
+);
+const FaSkillSection = ({ title, skills, description }) => (
+  <motion.div
+    className="mb-12"
+    initial={{ y: 50, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
+    className="flex"
+  >
+    <div className="flex flex-wrap gap-3">
+      {skills && skills.length > 0
+        ? skills.map((skill) => <SkillBubble key={skill.name} skill={skill} />)
+        : null}
+    </div>
+    <div className="flex flex-col  md:items-center mb-4 ">
+      <h2 className="text-2xl font-bold text-zinc-100 md:w-1/4">{title}</h2>
+      {description && (
+        <p className="text-zinc-400 mt-2 md:mt-0 md:w-3/4">{description}</p>
+      )}
+    </div>
+  </motion.div>
+);
 
+const SkillsPage = () => {
   return (
-    <div
-      className={`
-        ${skill.span}
-        ${baseColors[skill.expertise]}
-        p-6 rounded-xl flex flex-col items-center justify-center
-        transform transition-all duration-300 hover:scale-105
-        relative overflow-hidden
-      `}
-    >
-      {/* <div className="absolute top-3 right-3 bg-white/10 rounded-full px-2 py-1">
-        <span className="text-xs text-black">{skill.projects} projects</span>
-      </div> */}
-      
-      <IconComponent 
-        size={iconSize}
-        className="text-black"
-      />
+    <div className="h-screen  text-zinc-100  px-4 flex items-center justify-center">
+      <div className="max-w-4xl mx-auto">
+        <motion.h1
+          className="text-3xl md:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-900 to-purple-900 text-transparent bg-clip-text"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          My Skills
+        </motion.h1>
 
-      <p className={`
-        ${skill.span.includes('col-span-2') ? 'text-lg mt-4' : 'text-xs mt-2'}
-        text-black text-center
-      `}>
-        {skill.name}
-      </p>
+        <motion.div
+          className="space-y-16"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {/* Experience Section */}
+          <ExSkillSection
+            title="Experience"
+            skills={skills.expertSkills}
+            description="Technologies I've worked with extensively and feel confident using in production environments."
+          />
+          {/* Familiar With Section */}
+          <FaSkillSection
+            title="Familiar With"
+            skills={skills.familiarWith}
+            description="Technologies I've used in projects or studied, but may not have extensive production experience with."
+          />
+        </motion.div>
+
+        <motion.div
+          className="mt-16 text-center text-zinc-400"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+       
+        </motion.div>
+      </div>
     </div>
   );
 };
 
-export default function Skills() {
-  return (
-    <section className=" py-16 px-9 sm:px-6 lg:px-32">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-[#00c8ff] text-transparent bg-clip-text">
-          Skills & Technologies
-        </h2>
-        
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-          {skills.map((skill, index) => (
-            <SkillTile key={index} skill={skill} index={index} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+export default SkillsPage;
