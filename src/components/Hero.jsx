@@ -7,7 +7,7 @@ import TabsMenu from "./TabsMenu";
 const Hero = () => {
   return (
     <main
-      className="flex h-screen flex-col items-center justify-center "
+      className="flex h-screen flex-col items-center justify-center -mt-6"
       id="hero"
     >
       <section className="w-full flex flex-col items-center justify-center px-4">
