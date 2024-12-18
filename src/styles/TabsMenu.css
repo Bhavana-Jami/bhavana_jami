@@ -1,0 +1,10 @@
+.activeTab {
+  background-color: #00c7ff;
+  /* background-clip: text; */
+  background-image: linear-gradient(to bottom, #00c7ff 0%, #123a79 100%);
+  /* -webkit-background-clip: text; */
+  /* color: transparent; */
+  /* -webkit-text-fill-color: transparent; */
+  opacity: 0.8;
+  font-weight: 500;
+}

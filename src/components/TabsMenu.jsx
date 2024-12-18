@@ -1,9 +1,8 @@
-'use client'
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
-
+import resume from "../assets/resume.pdf";
+import "../styles/TabsMenu.css"
 const TabsMenu = () => {
   const [activeSection, setActiveSection] = useState("projects");
   const [isSticky, setIsSticky] = useState(false);
@@ -11,43 +10,49 @@ const TabsMenu = () => {
   const { scrollY } = useScroll();
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById("hero");
-      const heroBottom = heroSection
-        ? heroSection.getBoundingClientRect().bottom
-        : 0;
+  const tabs = [
+    { id: "projects", label: "Projects" },
+    { id: "skills", label: "Skills" },
+    { id: "contact", label: "Contact" },
+    // { id: "resume", label: "Resume" },
+  ];
 
-      // Make the navbar sticky when the hero section is fully out of view
-      setIsSticky(heroBottom <= 0);
+  const handleScroll = useCallback(() => {
+    const heroSection = document.getElementById("hero");
+    const heroBottom = heroSection
+      ? heroSection.getBoundingClientRect().bottom
+      : 0;
 
-      const sections = ["about", "projects", "skills", "contact", "resume"];
-      let currentSection = "about";
+    setIsSticky(heroBottom <= 0);
 
-      sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            currentSection = section;
-          }
+    let currentSection = "projects"; // Default to projects if no section is in view
+    let minDistance = Infinity;
+
+    tabs.forEach((tab) => {
+      const element = document.getElementById(tab.id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const distance = Math.abs(rect.top);
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentSection = tab.id;
         }
-      });
+      }
+    });
 
-      setActiveSection(currentSection);
-    };
+    setActiveSection(currentSection);
+  }, [tabs]);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
       if (latest < lastScrollY) {
-        // Scrolling up
         setIsVisible(true);
       } else if (latest > 100 && latest > lastScrollY) {
-        // Scrolling down and past the threshold
         setIsVisible(false);
       }
       setLastScrollY(latest);
@@ -57,7 +62,7 @@ const TabsMenu = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = isSticky ? 84 : 0; // Adjust this value based on your nav height
+      const navHeight = isSticky ? 84 : 0;
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
@@ -67,21 +72,11 @@ const TabsMenu = () => {
     }
   };
 
-  const tabs = [
-    // { id: "about", label: "About" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" },
-    { id: "resume", label: "Resume" },
-  ];
-
   return (
     <motion.nav
       className={cn(
-        "z-40 max-w-4xl  transition-all duration-300 ease-in-out",
-        isSticky
-          ? "fixed top-0 -translate-x-1/2"
-          : "relative"
+        "z-40 max-w-4xl transition-all duration-300 ease-in-out",
+        isSticky ? "fixed top-0 " : "relative"
       )}
       initial={false}
       animate={{
@@ -92,20 +87,18 @@ const TabsMenu = () => {
         duration: 0.3,
         ease: "easeInOut",
       }}
+      // className="mx-10"
     >
-      <div className="px-4 sm:px-3 lg:px-8">
+      <div className="px-2 md:px-4 lg:px-5 sm:px-3 ">
         <ul className="flex justify-center space-x-2 p-1 rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
           {tabs.map((tab) => (
             <li key={tab.id}>
               <motion.button
-                style={{ 
-                  backgroundColor: activeSection === tab.id ? "rgba(0, 200, 255, 0.3)" : "",
-                }}
                 onClick={() => scrollToSection(tab.id)}
                 className={cn(
                   "px-4 py-2 rounded-full text-sm transition-all duration-100 ease-in-out",
                   activeSection === tab.id
-                    ? "text-white shadow-blue-600/50 font-bold"
+                    ? "activeTab"
                     : "text-gray-300 hover:text-white hover:bg-white/10"
                 )}
                 whileHover={{ scale: 1.05 }}
@@ -115,6 +108,15 @@ const TabsMenu = () => {
               </motion.button>
             </li>
           ))}
+          <a
+            className={cn(
+              "px-4 py-2 rounded-full text-sm transition-all duration-100 ease-in-out text-colorBlueOne"
+            )}
+            href={resume} 
+            download="BHAVANA_JAMI_2_YOE_TCS_FRONT_END_DEV.pdf" 
+          >
+            Resume
+          </a>
         </ul>
       </div>
     </motion.nav>
@@ -122,4 +124,3 @@ const TabsMenu = () => {
 };
 
 export default TabsMenu;
-

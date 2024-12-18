@@ -72,7 +72,7 @@ const FaSkillSection = ({ title, skills, description }) => (
     whileInView={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.5 }}
     viewport={{ once: true }}
-    className="flex"
+    // className="flex"
   >
     <div className="flex flex-wrap gap-3">
       {skills && skills.length > 0
@@ -90,7 +90,7 @@ const FaSkillSection = ({ title, skills, description }) => (
 
 const SkillsPage = () => {
   return (
-    <div className="h-screen  text-zinc-100  px-4 flex items-center justify-center">
+    <div id="skills" className="h-screen  text-zinc-100  px-4 flex items-center justify-center">
       <div className="max-w-4xl mx-auto">
         <motion.h1
           className="text-3xl md:text-3xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-900 to-purple-900 text-transparent bg-clip-text"

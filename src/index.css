@@ -3,19 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --main_blue: #00c7ff;
-  --section-title-gradient: linear-gradient(
-    309deg,
-    #a6ddff 2.25225%,
-    #33c2ff 48.0785%,
-    #00c7ff 100%
-  );
+  --blueColorPrimary: #00c7ff;
+  --darkBlue: #000a1f;
+  --textWhite:#ffffff;
 }
 
 body {
   margin: 0 !important;
   padding: 0 !important;
-  /* box-sizing: border-box; */
 }
 
 ::-webkit-scrollbar {
