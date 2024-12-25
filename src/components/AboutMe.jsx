@@ -15,14 +15,14 @@ export default function About() {
           className=" rounded-1xl shadow-2xl max-w-4xl overflow-hidden h-screen  flex justify-center items-center"
         >
           <div className="p-8 sm:p-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#00c8ff] mb-4">
-              A lil about me
-            </h2>
-            <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
+          About Me
+        </h2>
+            {/* <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
               Passionate about creating beautiful, functional, and user-centered
               digital experiences. Always learning and exploring new
               technologies to push the boundaries of web development.
-            </p>
+            </p> */}
 
             <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-8 lg:space-y-0">
               {/* Designer Section */}

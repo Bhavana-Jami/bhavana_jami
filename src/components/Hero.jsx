@@ -7,18 +7,18 @@ import TabsMenu from "./TabsMenu";
 const Hero = () => {
   return (
     <main
-      className="flex h-screen flex-col items-center justify-center "
+      className="flex h-screen w-screen flex-col items-start justify-center"
       id="hero"
     >
       <section className="w-full flex flex-col items-center justify-center px-4">
-        <div className="relative inline-block">
+        {/* <div className="relative inline-block text-left"> */}
           <Lottie
             animationData={heroLottie}
             loop={true}
-            className="heroLottie w-64 h-64"
+        className="heroLottie w-auto h-auto"
           />
           <div className="tooltip">Hi, I'm available to work!</div>
-        </div>
+        {/* </div> */}
         <h1
           id="bhavana_jami"
           className="text-2xl md:text-4xl lg:text-6xl font-bold text-center mb-4"
@@ -38,17 +38,19 @@ const Hero = () => {
             </span>
           </span>{" "}
           in creating beautiful, functional websites that bring ideas to life.
-          &nbsp;
-          <a
-            href="#about"
-            className="relative inline-block text-colorBlueOne/90 hover:text-colorBlueOne transition duration-300"
-            style={{
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.2)",
-              fontWeight: "500",
-            }}
-          >
-            Know more..
-            <span
+        </p>
+        <a
+          href="#about"
+          className="relative inline-block text-colorBlueOne/90 hover:text-colorBlueOne transition duration-300 p-3 ps-4 pe-4 hover:bg-colorBlueOne/20"
+          style={{
+            textShadow: "1px 1px 3px rgba(0, 0, 0, 0.2)",
+            fontWeight: "500",
+            border: "0.8px solid #00c7ff",
+            borderRadius: "1.8rem",
+          }}
+        >
+          Know more..
+          {/* <span
               className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
               style={{
                 width: "70%",
@@ -57,9 +59,8 @@ const Hero = () => {
                 left: "50%",
                 transform: "translateX(-50%)",
               }}
-            />
-          </a>
-        </p>
+            /> */}
+        </a>
         <TabsMenu />
       </section>
     </main>

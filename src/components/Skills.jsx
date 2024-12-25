@@ -21,7 +21,9 @@ const SkillsBubbles = () => {
   return (
     <div className="min-h-screen  p-8 w-screen overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-white mb-16">My Skills</h1>
+      <h2 className="text-3xl font-bold text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
+      Skills
+        </h2>
         
         {/* Desktop Layout (Infinity Shape) */}
         <div className="hidden lg:block relative h-[400px]">
