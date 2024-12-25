@@ -11,6 +11,9 @@ module.exports = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             colors: {
+                backgroundImage: {
+                    'custom-gradient': 'linear-gradient(90deg, #1CB5E0 0%, #000851 100%)',
+                  },
                 colorBlueOne:"#00c7ff",
                 background: '#000a1f',
                 foreground: 'hsl(var(--foreground))',

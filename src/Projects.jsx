@@ -1,209 +1,133 @@
-// // import React from "react";
+'use client'
 
-// // const Projects = () => {
-// //   const projects = [
-// //     {
-// //       id: 1,
-// //       name: "Portfolio",
-// //       techstack: "ReactJs • ReactBootstrap • CSS",
-// //       description:
-// //         "This is my portfolio website where I tried  is my portfolio website where I tried  is my portfolio website where I tried  is my portfolio website where I tried to showcase my web developement skills in the aspects of design and dvelopment",
-// //       github: "git",
-// //       demo: "demo",
-// //     },
-// //     {
-// //       id: 2,
-// //       name: "Trigli",
-// //       techstack: "ReactJs • ReactBootstrap • CSS",
-// //       description:
-// //         "Trigli resembles a note taking app except it is specifically developed for the users to journal about their triggers and glimmers",
-// //       github: "trigligit",
-// //       demo: "triglidemo",
-// //     },
-// //     {
-// //       id: 3,
-// //       name: "BlueWonk",
-// //       techstack: "ReactJs • React • Bootstrap",
-// //       description:
-// //         "Blue Wonk is my personal blog where I share various things I am personally interested in.",
-// //       github: "",
-// //       demo: "",
-// //     },
-// //     // { id: 4, name: "Bcommerce", techstack: "NA", description: "Coming Soon", github: "NA", demo: "NA" }
-// //   ];
-// //   return (
-// //     <div
-// //       id="projects"
-// //       className="min-h-screen w-full p-4 flex items-center justify-center bg-slate-950 flex-col"
-// //     >
-// //       <h2 className="text-4xl font-bold">Projects</h2>
-// //       <div>
-// //         {
-// //             projects.map((project)=>(
-// //                <div key={project.id}>
-// //                 <h2>{project.name}</h2>
-// //                 <span>{project.techstack}</span>
-// //                </div>
-// //             ))
-// //         }
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default Projects;
-// import React from "react";
-// import { Wallet, ShoppingCart, Users } from "lucide-react";
-// import ProjectCard from "./components/ProjectCard";
-// export function Projects() {
-//   const projects = [
-//     {
-//       title: "BeenPay",
-//       description: "Online Payments",
-//       icon: <Wallet className="w-6 h-6 text-white" />,
-//       link: "#",
-//       rotation: -5,
-//       translate: { x: 0, y: 0 },
-//     },
-//     {
-//       title: "Been Checkout",
-//       description: "Pre-Built Payments",
-//       icon: <ShoppingCart className="w-6 h-6 text-white" />,
-//       link: "#",
-//       rotation: 0,
-//       translate: { x: -20, y: 20 },
-//     },
-//     {
-//       title: "Been Connect",
-//       description: "Business Financing",
-//       icon: <Users className="w-6 h-6 text-white" />,
-//       link: "#",
-//       rotation: 5,
-//       translate: { x: -40, y: 40 },
-//     },
-//   ];
-
-//   return (
-//     <section
-//       id="projects"
-//       className="min-h-screen flex items-center justify-center "
-//     >
-//       <div className="max-w-6xl w-full">
-//         <h2 className="title text-3xl md:text-4xl font-bold mb-12 text-center">
-//           Featured Projects
-//         </h2>
-//         <div className="relative flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
-//           {projects.map((project, index) => (
-//             <ProjectCard key={project.title} {...project} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Projects;
-// 'use client'
-
-// import Link from 'next/link'
-import { motion } from 'framer-motion'
-// import{ Link} from "react-router-dom"
-// import aum_yoga from "./assets/yoga.svg"
-// import blue_wonk from "./assets/blog.svg"
-// import trigger_glimmer from "./assets/trigli.svg"
-import aum_yoga from "./assets/aum_yoga.png"
-import blue_wonk from "./assets/blue_wonk.png"
-import trigger_glimmer from "./assets/trigger_glimmer.png"
-import { ArrowRight } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Github, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
     id: 1,
     title: "Project One",
-    image: blue_wonk,
-    category: "Graphic Design",
-    link: "/work/project-one"
+    description: "Get realtime notifications on events from your application",
+    image: "/placeholder.svg?height=400&width=400",
+    tech: "Next.js • TypeScript • Tailwind",
+    github: "https://github.com/username/project-one",
+    demo: "https://project-one.com",
+    gridArea: "span 1 / span 2", // Wide card
   },
   {
     id: 2,
     title: "Project Two",
-    image: aum_yoga,
-    category: "Illustration",
-    link: "/work/project-two"
+    description: "A modern authentication system with multiple providers",
+    image: "/placeholder.svg?height=400&width=400",
+    tech: "React • Node.js • MongoDB",
+    github: "https://github.com/username/project-two",
+    demo: "https://project-two.com",
+    gridArea: "span 1 / span 1", // Tall card
   },
   {
     id: 3,
     title: "Project Three",
-    image:trigger_glimmer,
-    category: "Branding",
-    link: "/work/project-three"
+    description: "Real-time chat application with video calling features",
+    image: "/placeholder.svg?height=400&width=400",
+    tech: "Vue.js • Firebase • WebRTC",
+    github: "https://github.com/username/project-three",
+    demo: "https://project-three.com",
+    gridArea: "span 1 / span 1", // Standard card
   },
-  // {
-  //   id: 4,
-  //   title: "Project Three",
-  //   image:trigger_glimmer,
-  //   category: "Branding",
-  //   link: "/work/project-three"
-  // },
-  // {
-  //   id: 4,
-  //   title: "Project Four",
-  //   image: "/placeholder.svg?height=400&width=400",
-  //   category: "UI Design",
-  //   link: "/work/project-four"
-  // },
-  // {
-  //   id: 5,
-  //   title: "Project Five",
-  //   image: "/placeholder.svg?height=400&width=400",
-  //   category: "Motion",
-  //   link: "/work/project-five"
-  // }
-]
+  {
+    id: 4,
+    title: "Project Four",
+    description: "AI-powered content generation platform",
+    image: "/placeholder.svg?height=400&width=400",
+    tech: "Python • TensorFlow • React",
+    github: "https://github.com/username/project-four",
+    demo: "https://project-four.com",
+    gridArea: "span 1 / span 1", // Standard card
+  }
+];
 
 export default function Projects() {
   return (
-    <div className=" text-white py-16 px-4 sm:px-6lg:px-9" id='projects'>
-      <div className="max-w-5xl mx-auto  sm:px-6">
-      <h2 className="title text-3xl md:text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-l from-white to-purple-900 ">
-          Featured Projects
-         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="min-h-screen w-full px-9 relative overflow-hidden sm:px-20" id="projects">
+      {/* Background Pattern */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        // style={{
+        //   backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l9.9-9.9h-2.83zM32 0l-3.486 3.485 1.415 1.415L34.828.828 32 0zm-6.485 0L16.828 8.687l1.414 1.414 10.485-10.485L25.515 0zm12.97 0l-8.485 8.485 1.415 1.415L41.9 0h-2.83zm-9.9 0l-9.9 9.9 1.415 1.415L29.9 0h-2.83zm-6.485 0L12.828 8.687l1.414 1.414 9.9-9.9L22.1 0zm12.97 0l-9.9 9.9 1.415 1.415L36.9 0h-2.83zm-6.485 0L18.828 8.687l1.414 1.414 9.9-9.9L28.585 0zm12.97 0l-9.9 9.9 1.415 1.415L43.9 0h-2.83zM20.343 0L11.857 8.485 13.272 9.9l9.9-9.9h-2.83zM38.97 0l-9.9 9.9 1.415 1.415L40.9 0h-2.83zM25.515 0L17.03 8.485 18.444 9.9l9.9-9.9h-2.83zm6.485 0L22.515 9.485 23.93 10.9l9.9-9.9h-2.83zm6.485 0L29.03 8.485 30.444 9.9l9.9-9.9h-2.83zM38.97 0l-9.9 9.9 1.415 1.415L40.9 0h-2.83z' fill='%2300c7ff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+        // }}
+      />
+
+      <div className="max-w-7xl mx-auto relative">
+        <h2 className="text-3xl font-bold text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
+          Projects
+        </h2>
+
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] gap-4">
           {projects.map((project) => (
-            <a href={project.link} key={project.id}>
-              <motion.div
-                className="relative group overflow-hidden rounded-lg bg-[#121226] aspect-square"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative h-full w-full p-1 flex items-center justify-center">
-                  <img
+            <motion.div
+              key={project.id}
+              className={`group relative ${project.gridArea}`}
+              style={{ gridArea: project.gridArea }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="h-full w-full rounded-xl overflow-hidden backdrop-blur-sm bg-white/5  hover:border-[#00c7ff]/30 transition-all duration-300">
+                {/* Project Image */}
+                <div className="relative h-full w-full">
+                  {/* <img
                     src={project.image}
                     alt={project.title}
-                    className="w-3/4 h-3/4 object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
+                    
+                  /> */}
+                  <div className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 "></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/90 to-transparent" />
+                  
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#00c7ff] transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="text-[#00c7ff] text-xs mb-4">
+                      {project.tech}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-white/10 hover:bg-[#00c7ff]/20 transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <Github className="w-5 h-5 text-white" />
+                      </motion.a>
+                      <motion.a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-white/10 hover:bg-[#00c7ff]/20 transition-colors"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <ExternalLink className="w-5 h-5 text-white" />
+                      </motion.a>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
-                  <p className="text-sm text-gray-300">{project.category}</p>
-                </div>
-              </motion.div>
-            </a>
+              </div>
+            </motion.div>
           ))}
-          <div className="col-span-full flex justify-center mt-8">
-            <motion.button
-              className="px-6 py-3 bg-[#141428] text-white rounded-lg font-semibold flex items-center space-x-2 hover:bg-[#1c1c3a] transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span>More</span>
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </div>
         </div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 

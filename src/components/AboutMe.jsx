@@ -12,7 +12,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className=" rounded-1xl shadow-2xl max-w-4xl overflow-hidden h-screen bg-black/55 flex justify-center items-center"
+          className=" rounded-1xl shadow-2xl max-w-4xl overflow-hidden h-screen  flex justify-center items-center"
         >
           <div className="p-8 sm:p-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#00c8ff] mb-4">

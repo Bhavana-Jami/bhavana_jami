@@ -15,9 +15,10 @@ function App() {
       <Hero />
       {/* <TabsMenu/> */}
       {/* <Work/> */}
+      <Projects />
+
       <AboutMe />
 
-      <Projects />
       <Skills />
 
       {/* <section

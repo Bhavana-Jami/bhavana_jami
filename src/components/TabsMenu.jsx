@@ -25,7 +25,7 @@ const TabsMenu = () => {
 
     setIsSticky(heroBottom <= 0);
 
-    let currentSection = "projects"; // Default to projects if no section is in view
+    let currentSection = "projects";
     let minDistance = Infinity;
 
     tabs.forEach((tab) => {
@@ -87,7 +87,6 @@ const TabsMenu = () => {
         duration: 0.3,
         ease: "easeInOut",
       }}
-      // className="mx-10"
     >
       <div className="px-2 md:px-4 lg:px-5 sm:px-3 ">
         <ul className="flex justify-center space-x-2 p-1 rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
