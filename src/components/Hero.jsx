@@ -7,8 +7,8 @@ import ScrollDownIcon from "./ui/scrolldown";
 
 const Hero = () => {
   return (
-    <main className="flex  sm:px-20" id="hero">
-      <section className="w-full flex flex-col items-left sm:items-center justify-center px-4">
+    <main className="flex  sm:px-20 " id="hero">
+      <section className="pt-10 w-full flex flex-col items-left sm:items-center justify-center px-4">
         <div className="relative inline-block text-left  sm:text-center -ms-20 sm:m-0">
           <Lottie
             animationData={heroLottie}

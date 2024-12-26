@@ -48,7 +48,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen w-full px-9 relative overflow-hidden sm:px-20" id="projects">
+    <section className="min-h-screen w-full px-9 relative overflow-hidden sm:px-20 mt-8" id="projects">
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 opacity-10"
