@@ -15,7 +15,7 @@ const Hero = () => {
             loop={true}
             className="heroLottie w-auto h-auto"
           />
-          <div className="tooltip">Hi, I'm available to work!</div>
+          <div className="tooltip -ms-24 sm:m-0">Hi, I'm available to work!</div>
         </div>
         <h1
           id="bhavana_jami"
