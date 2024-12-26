@@ -58,7 +58,7 @@ export default function Projects() {
       />
 
       <div className="max-w-7xl mx-auto relative">
-        <h2 className="text-3xl font-bold text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
+        <h2 className="text-3xl font-bold text-left sm:text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
           Projects
         </h2>
 

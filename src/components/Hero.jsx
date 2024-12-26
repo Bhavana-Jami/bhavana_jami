@@ -3,43 +3,36 @@ import "../styles/Hero.css";
 import Lottie from "lottie-react";
 import heroLottie from "../assets/heroLottie.json";
 import TabsMenu from "./TabsMenu";
+import ScrollDownIcon from "./ui/scrolldown";
 
 const Hero = () => {
   return (
-    <main
-      className="flex h-screen w-screen flex-col items-start justify-center"
-      id="hero"
-    >
-      <section className="w-full flex flex-col items-center justify-center px-4">
-        {/* <div className="relative inline-block text-left"> */}
+    <main className="flex  sm:px-20" id="hero">
+      <section className="w-full flex flex-col items-left sm:items-center justify-center px-4">
+        <div className="relative inline-block text-left  sm:text-center -ms-20 sm:m-0">
           <Lottie
             animationData={heroLottie}
             loop={true}
-        className="heroLottie w-auto h-auto"
+            className="heroLottie w-auto h-auto"
           />
           <div className="tooltip">Hi, I'm available to work!</div>
-        {/* </div> */}
+        </div>
         <h1
           id="bhavana_jami"
-          className="text-2xl md:text-4xl lg:text-6xl font-bold text-center mb-4"
+          className="text-3xl sm:3xl md:text-4xl lg:text-6xl font-bold text-left sm:text-center mb-4"
         >
           Bhavana Jami
         </h1>
-        <p className="text-base sm:text-xl md:text-1xl lg:text-1xl text-center text-blue-990 max-w-[680px] mb-5 md:mb-7 tracking-wide leading-6 md:leading-7 lg:leading-8">
-          I'm a Frontend Developer with{" "}
-          <span className="relative inline-block">
-            <span
-              className=""
-              style={{
-                textShadow: " 0 0 8px #1d93b4",
-              }}
-            >
-              2 years of professional experience
-            </span>
-          </span>{" "}
-          in creating beautiful, functional websites that bring ideas to life.
+        <p className="text-left sm:text-center">
+          &#8226;Frontend developer&#8226;2 years of professional
+          experience&#8226;Some text
         </p>
-        <a
+        <p className="mt-4 text-base sm:text-xl md:text-1xl lg:text-1xl text-left sm:text-wrap sm:text-center  text-blue-990 max-w-[680px] mb-5 md:mb-7 tracking-wide leading-6 md:leading-7 lg:leading-8">
+          I'm currently working at Tata Consultancy Services as Frontend
+          Developer creating beautiful, functional websites that bring ideas to
+          life.
+        </p>
+        {/* <a
           href="#about"
           className="relative inline-block text-colorBlueOne/90 hover:text-colorBlueOne transition duration-300 p-3 ps-4 pe-4 hover:bg-colorBlueOne/20"
           style={{
@@ -50,18 +43,19 @@ const Hero = () => {
           }}
         >
           Know more..
-          {/* <span
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
-              style={{
-                width: "70%",
-                borderBottom: "1px dotted var(--blueColorPrimary)",
-                position: "absolute",
-                left: "50%",
-                transform: "translateX(-50%)",
-              }}
-            /> */}
-        </a>
+          <span
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
+            style={{
+              width: "70%",
+              borderBottom: "1px dotted var(--blueColorPrimary)",
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
+          />
+        </a> */}
         <TabsMenu />
+        
       </section>
     </main>
   );

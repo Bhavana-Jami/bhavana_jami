@@ -15,7 +15,7 @@ function App() {
       <Hero />
       {/* <TabsMenu/> */}
       {/* <Work/> */}
-      <AboutMe />
+      {/* <AboutMe /> */}
 
       <Projects />
 

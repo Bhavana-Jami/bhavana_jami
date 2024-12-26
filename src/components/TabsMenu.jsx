@@ -3,9 +3,9 @@ import { motion, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 import resume from "../assets/resume.pdf";
 import "../styles/TabsMenu.css";
-
 const TabsMenu = () => {
   const [activeSection, setActiveSection] = useState("projects");
+  const [isSticky, setIsSticky] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const { scrollY } = useScroll();
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -14,9 +14,17 @@ const TabsMenu = () => {
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
     { id: "contact", label: "Contact" },
+    // { id: "resume", label: "Resume" },
   ];
 
   const handleScroll = useCallback(() => {
+    const heroSection = document.getElementById("hero");
+    const heroBottom = heroSection
+      ? heroSection.getBoundingClientRect().bottom
+      : 0;
+
+    setIsSticky(heroBottom <= 0);
+
     let currentSection = "projects";
     let minDistance = Infinity;
 
@@ -43,10 +51,8 @@ const TabsMenu = () => {
   useEffect(() => {
     return scrollY.onChange((latest) => {
       if (latest < lastScrollY) {
-        // Scrolling up
         setIsVisible(true);
       } else if (latest > 100 && latest > lastScrollY) {
-        // Scrolling down and past the 100px mark
         setIsVisible(false);
       }
       setLastScrollY(latest);
@@ -56,7 +62,7 @@ const TabsMenu = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = 84; // Approximate height of the navbar
+      const navHeight = isSticky ? 84 : 0;
       const elementPosition =
         element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
@@ -69,7 +75,8 @@ const TabsMenu = () => {
   return (
     <motion.nav
       className={cn(
-        "z-40 w-full fixed top-0 left-0 right-0 transition-all duration-300 ease-in-out"
+        "z-40 max-w-4xl transition-all duration-300 ease-in-out fixed top-0 right-0 sm:relative sm:right-0 sm:left-0"
+        // isSticky ? "fixed top-0 " : "relative"
       )}
       initial={false}
       animate={{
@@ -81,8 +88,8 @@ const TabsMenu = () => {
         ease: "easeInOut",
       }}
     >
-      <div className="px-2 md:px-4 lg:px-5 sm:px-3 max-w-sm mx-auto">
-        <ul className="flex justify-center space-x-2 p-1 rounded-full backdrop-blur-sm bg-black/10 shadow-lg border border-white/10">
+      <div className="px-2 md:px-4 lg:px-5 sm:px-3 ">
+        <ul className="  sm:w-full flex justify-center space-x-2 p-1 rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
           {tabs.map((tab) => (
             <li key={tab.id}>
               <motion.button
@@ -116,4 +123,3 @@ const TabsMenu = () => {
 };
 
 export default TabsMenu;
-
