@@ -1,0 +1,6 @@
+#contact {
+    width: 100%;
+    
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, var(--darkBlue) 35%, rgba(0,10,31,0.6140581232492996) 100%);
+}

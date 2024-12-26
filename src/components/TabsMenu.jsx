@@ -75,7 +75,7 @@ const TabsMenu = () => {
   return (
     <motion.nav
       className={cn(
-        "z-40 max-w-4xl transition-all duration-300 ease-in-out fixed top-0 right-0 left-0 sm:relative sm:right-0 sm:left-0"
+        "px-1 z-40 max-w-4xl transition-all duration-300 ease-in-out fixed top-0 right-0 left-0 sm:relative sm:right-0 sm:left-0"
         // isSticky ? "fixed top-0 " : "relative"
       )}
       initial={false}
@@ -89,7 +89,7 @@ const TabsMenu = () => {
       }}
     >
       <div className="px-0 md:px-2 md:px-4 lg:px-5 sm:px-3 ">
-        <ul className="  w-screen sm:w-full flex justify-center space-x-2 py-1 rounded-none sm:rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
+        <ul className="  w-screen sm:w-full flex justify-center space-x-2 py-1 rounded-full sm:rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
           {tabs.map((tab) => (
             <li key={tab.id}>
               <motion.button
