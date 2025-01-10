@@ -41,7 +41,7 @@ const Hero = () => {
         >
           Bhavana Jami
         </h1>
-        <p className="text-base font-semibold text-gray-400 text-left sm:text-center tracking-wide text-wrap">
+        <p className="text-sm sm:text-xl md:text-lg lg:text-1xl font-semibold text-gray-400 text-left sm:text-center tracking-wide text-wrap">
           ✦ Frontend developer ✦ 2 years of professional experience ✦ Ah, I do
           write at &nbsp;
           <a
