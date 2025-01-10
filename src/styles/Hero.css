@@ -85,6 +85,7 @@
 }
 @media only screen and (max-width: 600px) {
   #hero{
-    height: 75vh;
+    margin-bottom: 2rem;
+    height: 90vh;
   }
 }
