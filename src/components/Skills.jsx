@@ -3,7 +3,7 @@ import "../styles/Skills.css";
 const SkillIcon = ({ icon, title }) => (
   <div className="flex flex-col items-center gap-1 group">
     <div className="relative">
-      <div className="p-4 rounded-full bg-black-800/90 backdrop-blur-sm border border-slate-700/50 relative overflow-hidden group-hover:scale-110 transition-transform duration-200">
+      <div className="p-4 rounded-full bg-black-800/90 backdrop-blur-sm  relative overflow-hidden group-hover:scale-110 transition-transform duration-200">
         {/* Glossy effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-full" />
         <img
@@ -20,9 +20,11 @@ const SkillIcon = ({ icon, title }) => (
 );
 
 const SkillsSection = ({ title, skills }) => (
-  <div className="space-y-6 ">
-    <h2 className="text-xl md:text-2xl font-bold text-slate-200">{title}</h2>
-    <div className="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
+  <div className=" flex items-left justify-center flex-col">
+    <h2 className="text-3xl font-bold text-left mb-8  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851]">
+      {title}
+    </h2>
+    <div className="flex gap-3">
       {skills.map((skill, index) => (
         <SkillIcon key={index} {...skill} />
       ))}
@@ -78,16 +80,19 @@ const SkillsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex justify-start md:justify-center items-center  w-full " id="skills">
-      <div className="max-w-6xl ">
-        <div className="mb-12">
+    <div
+      className="mt-8  h-svh flex justify-start items-center  w-full sm:px-20 px-4"
+      id="skills"
+    >
+      <div className=" ">
+        {/* <div className="">
           <h2 className="text-3xl font-bold text-left sm:text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
             Skills
           </h2>
-        </div>
+        </div> */}
 
-        <div className="flex flex-col lg:flex-row lg:gap-16 ">
-          <div className="flex-1 mb-12 lg:mb-0 ">
+        <div className="flex flex-col  lg:gap-16 ">
+          <div className="flex-1  mb-12 lg:mb-0 ">
             <SkillsSection title="I'm Good At" skills={expertSkills} />
           </div>
           <div className="flex-1">

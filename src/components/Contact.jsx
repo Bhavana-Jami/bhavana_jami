@@ -89,9 +89,9 @@ const ContactPage = () => {
   return (
     <div
       id="contact"
-      className=" text-zinc-100 flex flex-col px-4"
+      className=" text-zinc-100 flex flex-col sm:px-20 px-4 items-start"
     >
-      <main className="flex-grow flex items-center justify-center px-6 py-12">
+      <main className="flex-grow flex items-center justify-center">
         <div className="max-w-3xl w-full space-y-16">
           {/* Main Contact Section */}
           <motion.div
@@ -100,15 +100,15 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold text-left sm:text-center mb-12  text-gray-300">
+            <h2 className="text-3xl font-bold text-left mb-8  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851]">
               Let's connect !
             </h2>
 
-            <div className="space-y-4 text-left sm:text-center">
-              <p className="text-base sm:text-xl text-zinc-400 text-left sm:text-center">
+            <div className="space-y-2 text-left ">
+              <p className="text-base sm:text-xl text-zinc-400 text-left">
                 You can reach out to me via this email
               </p>
-              <div className="flex justify-left sm:justify-center items-center space-x-2">
+              <div className="flex justify-left  items-center space-x-2">
                 <span className="text-xl sm:text-xl bg-gradient-to-r text-transparent bg-clip-text from-[#1CB5E0] to-[#000851] ">
                   {email}
                   <Button
@@ -126,7 +126,7 @@ const ContactPage = () => {
                 </span>
               </div>
             </div>
-            <div className="flex justify-start sm:justify-center  space-x-4 ">
+            <div className="flex justify-start   space-x-4 ">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
@@ -144,7 +144,7 @@ const ContactPage = () => {
           </motion.div>
         </div>
       </main>
-      <footer className="py-6 text-left  text-zinc-500 text-sm sm:text-center px-4">
+      <footer className="py-6 pt-28 text-left  text-zinc-500 text-sm sm:text-center">
         <p>
           © 2025 <a href="#">Bhavana Jami</a>. All rights reserved.
         </p>

@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
-import "./styles/Projects.css";
+import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import "../styles/Projects.css";
+import { Button } from "@/components/ui/button";
 const projects = [
   {
     id: 1,
@@ -34,34 +35,16 @@ const projects = [
     demo: "https://project-three.com",
     gridArea: "span 1 / span 1", // Standard card
   },
-  {
-    id: 4,
-    title: "Project Four",
-    description: "AI-powered content generation platform",
-    image: "/placeholder.svg?height=400&width=400",
-    tech: "Python • TensorFlow • React",
-    github: "https://github.com/username/project-four",
-    demo: "https://project-four.com",
-    gridArea: "span 1 / span 1", // Standard card
-  },
 ];
 
 export default function Projects() {
   return (
     <section
-      className="mb-20 w-full px-9 relative overflow-hidden sm:px-20 px-4 -mt-16 sm:-mt-0"
+      className=" w-full relative overflow-hidden sm:px-20 px-4  mb-8"
       id="projects"
     >
-      {/* Background Pattern */}
-      <div
-        className="absolute inset-0 opacity-10"
-        // style={{
-        //   backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM22.343 0L13.857 8.485 15.272 9.9l9.9-9.9h-2.83zM32 0l-3.486 3.485 1.415 1.415L34.828.828 32 0zm-6.485 0L16.828 8.687l1.414 1.414 10.485-10.485L25.515 0zm12.97 0l-8.485 8.485 1.415 1.415L41.9 0h-2.83zm-9.9 0l-9.9 9.9 1.415 1.415L29.9 0h-2.83zm-6.485 0L12.828 8.687l1.414 1.414 9.9-9.9L22.1 0zm12.97 0l-9.9 9.9 1.415 1.415L36.9 0h-2.83zm-6.485 0L18.828 8.687l1.414 1.414 9.9-9.9L28.585 0zm12.97 0l-9.9 9.9 1.415 1.415L43.9 0h-2.83zM20.343 0L11.857 8.485 13.272 9.9l9.9-9.9h-2.83zM38.97 0l-9.9 9.9 1.415 1.415L40.9 0h-2.83zM25.515 0L17.03 8.485 18.444 9.9l9.9-9.9h-2.83zm6.485 0L22.515 9.485 23.93 10.9l9.9-9.9h-2.83zm6.485 0L29.03 8.485 30.444 9.9l9.9-9.9h-2.83zM38.97 0l-9.9 9.9 1.415 1.415L40.9 0h-2.83z' fill='%2300c7ff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-        // }}
-      />
-
       <div className="max-w-7xl mx-auto relative">
-        <h2 className="text-3xl font-bold text-left sm:text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
+        <h2 className="text-3xl font-bold text-left  mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
           Projects
         </h2>
 
@@ -78,8 +61,6 @@ export default function Projects() {
               transition={{ duration: 0.5 }}
             >
               <div className=" h-full w-full rounded-xl overflow-hidden backdrop-blur-sm bg-white/5  hover:border-[#00c7ff]/30 transition-all duration-300">
-                {/* <div className="h-full w-full"> */}
-                {/* Content Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-center items-start project-card px-4">
                   <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#00c7ff] transition-colors">
                     {project.title}
@@ -91,13 +72,20 @@ export default function Projects() {
                     {project.tech}
                   </div>
                 </div>
-                {/* </div> */}
               </div>
             </motion.div>
           ))}
-          <div className="flex items-center justify-center">
-            <a href="#">More here..</a>
-          </div>
+        </div>
+        <div className="mt-12 text-left">
+          <Button
+            // variant="outline"
+            style={{ borderBottom: "0.8px solid #1CB5E0 " }}
+            className="view_more "
+
+>
+           View more projects
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </div>
     </section>
