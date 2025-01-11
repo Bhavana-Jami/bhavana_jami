@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/Skills.css";
 const SkillIcon = ({ icon, title }) => (
   <div className="flex flex-col items-center gap-1 group">
     <div className="relative">
@@ -78,7 +78,7 @@ const SkillsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen flex justify-center items-center p-6 w-[80%] md:p-8" id="skills">
+    <div className="min-h-screen flex justify-start md:justify-center items-center  w-full " id="skills">
       <div className="max-w-6xl ">
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-left sm:text-center mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">

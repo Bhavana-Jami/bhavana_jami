@@ -89,7 +89,7 @@ const ContactPage = () => {
   return (
     <div
       id="contact"
-      className="min-h-screen  text-zinc-100 flex flex-col px-4"
+      className=" text-zinc-100 flex flex-col px-4"
     >
       <main className="flex-grow flex items-center justify-center px-6 py-12">
         <div className="max-w-3xl w-full space-y-16">

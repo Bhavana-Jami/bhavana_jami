@@ -16,6 +16,7 @@ height: 100%;
   overflow-x: hidden !important;
   color: #e5e7eb;
   flex-direction: column;
+  /* width: 19rem !important; */
 }
 /* .title{
   background-color: #21D4FD;

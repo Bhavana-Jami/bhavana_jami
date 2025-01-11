@@ -12,7 +12,7 @@ const projects = [
     tech: "Next.js • TypeScript • Tailwind",
     github: "https://github.com/username/project-one",
     demo: "https://project-one.com",
-    gridArea: "span 1 / span 2", // Wide card
+    gridArea: "span 1 / span 1", // Wide card
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ const projects = [
 export default function Projects() {
   return (
     <section
-      className="min-h-screen w-full px-9 relative overflow-hidden sm:px-20 px-4 -mt-16 sm:-mt-0"
+      className="mb-20 w-full px-9 relative overflow-hidden sm:px-20 px-4 -mt-16 sm:-mt-0"
       id="projects"
     >
       {/* Background Pattern */}
@@ -95,8 +95,10 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
+          <div className="flex items-center justify-center">
+            <a href="#">More here..</a>
+          </div>
         </div>
-        <a href="#">More here..</a>
       </div>
     </section>
   );
