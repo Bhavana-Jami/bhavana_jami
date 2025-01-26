@@ -24,16 +24,16 @@ const Hero = () => {
 
   if (!isVisible) return null;
   return (
-    <main className="flex sm:px-20 px-4 " id="hero">
-      <section className=" w-full flex flex-col items-left justify-center ">
-        <div className="relative inline-block -ms-20">
+    <main className="flex sm:px-20 px-4  " id="hero">
+      <section className=" w-full flex flex-col items-left justify-center">
+        <div className="relative inline-block -ms-20 ">
           <Lottie
             animationData={heroLottie}
             loop={true}
             className="heroLottie w-auto h-auto"
           />
           <div className="tooltip 
-          -ms-24 sm:m-0 flex items-center justify-center">
+          sm:-ms-2 ms-28 flex items-center justify-center">
             Hi, I'm available to work!
           </div>
         </div>
@@ -43,7 +43,7 @@ const Hero = () => {
         >
           Bhavana Jami
         </h1>
-        <p className="text-sm sm:text-xl md:text-lg lg:text-1xl font-semibold text-gray-400 text-left tracking-wide text-wrap">
+        <p className="text-sm sm:text-xl md:text-lg lg:text-1xl font-semibold text-gray-400 text-left tracking-wide text-wrap max-w-[800px] ">
           ✦ Frontend developer ✦ 2 years of professional experience ✦ Ah, I do
           write at &nbsp;
           <a
@@ -57,7 +57,7 @@ const Hero = () => {
           </a>
         </p>
 
-        <p className=" text-gray-400 mt-4 text-sm sm:text-xl md:text-lg lg:text-1xl text-left sm:text-wrap  text-blue-990 max-w-[690px]   tracking-wide leading-6 md:leading-7 lg:leading-8">
+        <p className=" text-gray-400 mt-4 text-sm sm:text-xl md:text-lg lg:text-1xl text-left sm:text-wrap  text-blue-990 max-w-[800px]   tracking-wide leading-6 md:leading-7 lg:leading-8">
           I'm currently working at Tata Consultancy Services as Frontend
           Developer creating beautiful, functional websites that bring ideas to
           life.
