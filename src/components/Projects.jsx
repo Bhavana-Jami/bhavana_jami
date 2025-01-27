@@ -1,11 +1,11 @@
-"use client";
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import "../styles/Projects.css";
-import { Button } from "@/components/ui/button";
-import { Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 import trigli from "../assets/trigli.png";
+import aum_yoga from "../assets/aum_yoga.png";
+import bluewonk from "../assets/bluewonk.png";
 
 const projects = [
   {
@@ -26,10 +26,10 @@ const projects = [
     description:
       "A journal app to track your emotional triggers and uplifting moments. Built with ReactJS and Bootstrap for a seamless user experience.",
     oneLiner: "An emotional trigger and mood journal app.",
-    image: { trigli },
+    image: trigli,
     tech: "ReactJS • Bootstrap",
-    github: "https://github.com/yourusername/trigli",
-    demo: "https://trigli.com",
+    github: "https://github.com/Bhavana-Jami/trigli",
+    demo: "https://trigli.vercel.app/",
   },
   {
     id: 3,
@@ -37,10 +37,10 @@ const projects = [
     description:
       "A blog space where I share my thoughts, ideas, and passions. Created with ReactJS and Bootstrap for a clean and minimal design.",
     oneLiner: "A personal blog to share thoughts and passions.",
-    image: { trigli },
+    image: bluewonk,
     tech: "ReactJS • Bootstrap",
-    github: "https://github.com/yourusername/bluewonk",
-    demo: "https://bluewonk.com",
+    github: "https://github.com/Bhavana-Jami/bluewonk",
+    demo: "https://bluewonk-94503.web.app/",
   },
   {
     id: 4,
@@ -48,17 +48,17 @@ const projects = [
     description:
       "A yoga session booking application for hassle-free scheduling and management. Built with ReactJS to provide users with an intuitive interface.",
     oneLiner: "A seamless yoga session booking application.",
-    image: { trigli },
+    image: aum_yoga,
     tech: "ReactJS",
-    github: "https://github.com/yourusername/aumyooga",
-    demo: "https://aumyooga.com",
+    github: "https://github.com/Bhavana-Jami/aum_yoga",
+    demo: "https://aum-yoga.vercel.app/",
   },
 ];
 
 export default function Projects() {
   return (
     <section
-      className=" w-full relative overflow-hidden sm:px-20 px-4  mb-8 -mt-36"
+      className=" w-full relative overflow-hidden sm:px-20 px-7  mb-8 -mt-36"
       id="projects"
     >
       <div className="max-w-7xl mx-auto relative">

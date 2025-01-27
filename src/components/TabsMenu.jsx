@@ -32,8 +32,8 @@ const TabsMenu = () => {
   };
 
   return (
-    <div className="px-0 w-auto md:px-4 lg:px-5 sm:px-3 fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
-      <ul className="flex justify-center space-x-2 py-1 rounded-full sm:rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
+    <div className="px-10 w-auto md:px-4 lg:px-5 sm:px-3 fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
+      <ul className="flex justify-center  py-1 rounded-full sm:rounded-full bg-black/30 backdrop-blur-md shadow-lg border border-white/10">
         {tabs.map((tab) => (
           // <li key={tab.id}>
           <Link

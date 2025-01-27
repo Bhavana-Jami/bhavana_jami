@@ -24,7 +24,7 @@ const Hero = () => {
 
   if (!isVisible) return null;
   return (
-    <main className="flex sm:px-20 px-4  " id="hero">
+    <main className="flex sm:px-20 px-7 " id="hero">
       <section className=" w-full flex flex-col items-left justify-center">
         <div className="relative inline-block -ms-20 ">
           <Lottie
@@ -32,8 +32,10 @@ const Hero = () => {
             loop={true}
             className="heroLottie w-auto h-auto"
           />
-          <div className="tooltip 
-          sm:-ms-2 ms-28 flex items-center justify-center">
+          <div
+            className="tooltip 
+          sm:-ms-2 ms-28 flex items-center justify-center"
+          >
             Hi, I'm available to work!
           </div>
         </div>

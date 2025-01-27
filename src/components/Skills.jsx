@@ -81,7 +81,7 @@ const SkillsPage = () => {
 
   return (
     <div
-      className="mt-8  flex justify-start items-center  w-full sm:px-20 px-4"
+      className="mt-8  flex justify-start items-center  w-full sm:px-20 px-7"
       id="skills"
     >
       <div className=" ">

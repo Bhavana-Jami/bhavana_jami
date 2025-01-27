@@ -11,35 +11,33 @@ import {
   ChevronRight,
   FolderClosed,
 } from "lucide-react";
-import aum_yoga from "../assets/aum_yoga.png";
 import BreadCrum from "../components/BreadCrum";
 import { useLocation } from "react-router-dom";
+import Socials from "../components/Socials";
 
 export default function ProjectPage() {
   const location = useLocation();
   const project = location.state.project;
   return (
-    <div className="min-h-screen max-w-4xl  text-white py-8 ml-4 mr-4">
+    <div className="min-h-screen max-w-4xl  text-white py-8 ml-2 mr-2">
       {/* Project Header */}
       <div className="max-w-6xl mx-auto cursor-pointer">
-        <BreadCrum projectTitle={project?.title} projectId={project.id}/>
+        <BreadCrum projectTitle={project?.title} projectId={project.id} />
         <div className="flex items-center px-8 sm:px-6 lg:px-8">
           {/* <div className="bg-blue-600 p-4 rounded-2xl">
             <span className="text-4xl font-bold">N</span>
           </div> */}
           <div>
             <h2 className="text-3xl font-bold text-left  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
-             {project?.title}
+              {project?.title}
             </h2>
-            <p className="text-gray-400 mt-2">
-              {project.oneLiner}
-            </p>
+            <p className="text-gray-400 mt-2">{project.oneLiner}</p>
           </div>
         </div>
 
         <div className="mt-8 flex items-center space-x-6 px-8 sm:px-6 lg:px-8">
           <a
-            href={project.demoLink}
+            href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white flex items-center space-x-2"
@@ -48,7 +46,7 @@ export default function ProjectPage() {
             <span>Demo</span>
           </a>
           <a
-            href={project.githubLink}
+            href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white flex items-center space-x-2"
@@ -69,32 +67,20 @@ export default function ProjectPage() {
           />
         </div>
         <div className="mt-10 ">
-          <p className="text-xl">
-          {project.description}
-          </p>
+          <p className="text-xl">{project.description}</p>
         </div>
       </div>
 
       {/* Footer */}
       <footer className=" ">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="max-w-4xl ml-2 mr-2 px-4 sm:px-6 lg:px-8 text-left">
           <p className="text-gray-400 mb-4">
-            Made by{" "}
-            <a href="#" className="text-blue-400 hover:text-blue-300">
+           Reach out to me here
+            {/* <a href="#" className="text-blue-400 hover:text-blue-300">
               Bhavana Jami
-            </a>
+            </a> */}
           </p>
-          <div className="flex justify-start space-x-8 mb-8">
-            <a href="#" className="text-gray-400 hover:text-white">
-              <Twitter className="w-6 h-6" />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <Youtube className="w-6 h-6" />
-            </a>
-          </div>
+          <Socials />
         </div>
       </footer>
     </div>
