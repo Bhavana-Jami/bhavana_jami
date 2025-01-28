@@ -6,7 +6,7 @@ import BreadCrum from "../components/BreadCrum";
 import Footer from "../components/Footer";
 export default function AboutPage() {
   return (
-    <div className="min-h-screen max-w-4xl mx-auto text-white py-10 px-4 sm:px-6 lg:px-8 ">
+    <div className="min-h-screen p-8 max-w-5xl mx-auto text-white py-10 sm:px-6 lg:px-8 ">
       {/* Header Section */}
       <div className="space-y-4">
         <BreadCrum levelOne="About" pathHome="/" />

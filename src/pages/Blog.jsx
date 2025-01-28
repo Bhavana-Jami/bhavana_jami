@@ -46,7 +46,7 @@ export default function Blog() {
   );
 
   return (
-    <div className="min-h-screen max-w-4xl mx-auto text-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen p-8 max-w-5xl mx-auto text-white py-16 sm:px-6 lg:px-8">
       {/* Header Section */}
       <BreadCrum levelOne="Blog" pathHome="/" />
 
@@ -54,7 +54,10 @@ export default function Blog() {
         <h2 className="text-3xl font-bold text-left  mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
           Some of my good posts
         </h2>
-        <p className="text-gray-400 text-lg">
+        <p className="text-gray-400 text-lg pb-3"
+          style={{ borderBottom: "1px solid #2f393f" }}
+        
+        >
           I write on frontend development, life experiences, spirituality, and
           travel.
         </p>
@@ -101,7 +104,7 @@ export default function Blog() {
           No blog posts found matching your search.
         </div>
       )}
-<Footer/>
+      <Footer />
     </div>
   );
 }

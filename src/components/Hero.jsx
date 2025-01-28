@@ -34,7 +34,7 @@ const Hero = () => {
           />
           <div
             className="tooltip 
-          sm:-ms-2 ms-28 flex items-center justify-center"
+          sm:-ms-2 ms-28 flex items-center justify-center "
           >
             Hi, I'm available to work!
           </div>

@@ -24,16 +24,17 @@
 }
 
 .tooltip {
-  
+
   font-size: 10px;
   width: 18.5%;
   height: 3rem;
   text-align: center;
   position: absolute;
-  left: 20%;
+  left: 22%;
   top: -20%;
   transform: translateY(90%);
   letter-spacing: 1.2px;
+
 }
 
 .tooltip {
@@ -84,9 +85,32 @@
     opacity: 0.9;
   }
 }
+
 @media only screen and (max-width: 600px) {
-  #hero{
+  #hero {
     margin-bottom: 2rem;
     height: 90vh;
+  }
+
+  .tooltip {
+    padding: 2rem 3.4rem !important;
+    top: -35%;
+    left:5rem;
+    
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .tooltip {
+    padding: 2rem 3.4rem !important;
+    top: -35%;
+    left: 12rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .tooltip {
+    padding: 2rem 3.4rem !important;
+    top: -35%;
+    left: 13rem;
   }
 }
