@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 // import { Input } from "@/components/ui/input";
 import { Calendar, Tag, ChevronRight } from "lucide-react";
 import BreadCrum from "../components/BreadCrum";
+import Footer from "../components/Footer";
 
 // Sample blog post data
 const blogPosts = [
@@ -100,11 +101,7 @@ export default function Blog() {
           No blog posts found matching your search.
         </div>
       )}
-
-      {/* Footer */}
-      <footer className="mt-16 text-center text-gray-400">
-        <p>Stay tuned for more articles! 📚</p>
-      </footer>
+<Footer/>
     </div>
   );
 }

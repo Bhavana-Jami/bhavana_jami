@@ -5,7 +5,7 @@ import Skills from "../components/Skills";
 import Contact from "./Contact";
 const Home = () => {
   return (
-    <div className="flex  flex-col gap-y-32">
+    <div className="flex  flex-col gap-y-24">
       {" "}
       <Hero />
       <Projects />

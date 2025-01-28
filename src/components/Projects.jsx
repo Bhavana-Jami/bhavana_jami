@@ -14,7 +14,7 @@ const projects = [
       "Showcasing my design and development journey with a personal touch. Built using ReactJS, Bootstrap, and CSS for a responsive and visually engaging design.",
     oneLiner:
       "A visually engaging portfolio to highlight my skills and projects.",
-    // image: { trigli },
+    image: trigli ,
     tech: "ReactJS • Bootstrap • CSS",
     github: "https://github.com/yourusername/portfolio",
     demo: "https://yourportfolio.com",
@@ -26,7 +26,7 @@ const projects = [
     description:
       "A journal app to track your emotional triggers and uplifting moments. Built with ReactJS and Bootstrap for a seamless user experience.",
     oneLiner: "An emotional trigger and mood journal app.",
-    // image: trigli,
+    image: trigli,
     tech: "ReactJS • Bootstrap",
     github: "https://github.com/Bhavana-Jami/trigli",
     demo: "https://trigli.vercel.app/",
@@ -38,7 +38,7 @@ const projects = [
     description:
       "A blog space where I share my thoughts, ideas, and passions. Created with ReactJS and Bootstrap for a clean and minimal design.",
     oneLiner: "A personal blog to share thoughts and passions.",
-    // image: bluewonk,
+    image: bluewonk,
     tech: "ReactJS • Bootstrap",
     github: "https://github.com/Bhavana-Jami/bluewonk",
     demo: "https://bluewonk-94503.web.app/",
@@ -50,11 +50,11 @@ const projects = [
     description:
       "A yoga session booking application for hassle-free scheduling and management. Built with ReactJS to provide users with an intuitive interface.",
     oneLiner: "A seamless yoga session booking application.",
-    // image: aum_yoga,
+    image: aum_yoga,
     tech: "ReactJS",
     github: "https://github.com/Bhavana-Jami/aum_yoga",
     demo: "https://aum-yoga.vercel.app/",
-    variant: "accent",
+    variant: "dark",
   },
   {
     id: 1,
@@ -147,7 +147,7 @@ export default function Projects() {
         <div className="text-left mt-16 pl-1">
           <Link
             to="/projectsArchive"
-            className="border-b-[0.8px] border-[#1CB5E0] pb-1 text-[#1CB5E0] hover:underline"
+            className="border-b-[0.8px] border-[#1CB5E0] pb-1 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] hover:underline"
           >
             View more projects &nbsp; ⟶
           </Link>

@@ -6,6 +6,7 @@ import bluewonk from "../assets/bluewonk.png";
 import aum_yoga from "../assets/aum_yoga.png";
 import ProjectItem from "../components/ProjectItem";
 import BreadCrum from "../components/BreadCrum";
+import Footer from "../components/Footer";
 const projects = [
   {
     id: 1,
@@ -13,7 +14,7 @@ const projects = [
     description:
       "Showcasing my design and development journey with a personal touch. Built using ReactJS, Bootstrap, and CSS for a responsive and visually engaging design.",
     oneLiner:
-      "A visually engaging portfolio to highlight my skills and projects.A visually engaging portfolio to highlight my skills and projects.",
+      "A visually engaging portfolio to highlight my skills and projects.",
     // image: { trigli },
     tech: "ReactJS • Bootstrap • CSS",
     github: "https://github.com/yourusername/portfolio",
@@ -25,8 +26,7 @@ const projects = [
     title: "Trigli",
     description:
       "A journal app to track your emotional triggers and uplifting moments. Built with ReactJS and Bootstrap for a seamless user experience.",
-    oneLiner:
-      "An emotional trigger and mood journal app.n emotional trigger and mood journal app.n emotional trigger and mood journal app.",
+    oneLiner: "An emotional trigger and mood journal app.",
     // image: trigli,
     tech: "ReactJS • Bootstrap",
     github: "https://github.com/Bhavana-Jami/trigli",
@@ -38,8 +38,7 @@ const projects = [
     title: "Blue Wonk",
     description:
       "A blog space where I share my thoughts, ideas, and passions. Created with ReactJS and Bootstrap for a clean and minimal design.",
-    oneLiner:
-      "A personal blog to share thoughts and passionsn emotional trigger and mood journal app..",
+    oneLiner: "A personal blog to share thoughts and passions.",
     // image: bluewonk,
     tech: "ReactJS • Bootstrap",
     github: "https://github.com/Bhavana-Jami/bluewonk",
@@ -88,8 +87,7 @@ const projects = [
     title: "Blue Wonk",
     description:
       "A blog space where I share my thoughts, ideas, and passions. Created with ReactJS and Bootstrap for a clean and minimal design.",
-    oneLiner:
-      "A personal blog to share thoughts and passions.n emotional trigger and mood journal app.",
+    oneLiner: "A personal blog to share thoughts and passions.",
     // image: bluewonk,
     tech: "ReactJS • Bootstrap",
     github: "https://github.com/Bhavana-Jami/bluewonk",
@@ -103,13 +101,23 @@ export default function ProjectArchive() {
     <div className="min-h-screen p-8 max-w-5xl">
       <div className="max-w-7xl mx-auto">
         <BreadCrum levelOne="Projects" pathHome="/" />
-        <h2 className="text-4xl font-bold mb-8 text-blue-accent">Projects</h2>
+        <h2 className="text-4xl font-bold mb-4 text-blue-accent" 
+          
+        
+        >Projects</h2>
+          <p
+          className="text-gray-400 text-lg  pb-3 border-gray-800 mb-8"
+          style={{ borderBottom: "1px solid #2f393f" }}
+        >
+          Check my Github for more projects.
+        </p>
         <div className="bento-grid">
           {projects.map((project) => (
             <ProjectItem key={project.id} {...project} />
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
