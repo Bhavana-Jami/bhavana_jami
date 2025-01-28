@@ -14,15 +14,17 @@ import { Button } from "@/components/ui/button";
 import "../styles/Contact.css";
 import Socials from "../components/Socials";
 
-
 const ContactPage = () => {
-  const [copied, setCopied] = useState(false);
-  const email = "bhavanajami111@gmail.com";
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = () => {
+    const email = "bhavanajami111@gmail.com";
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        alert("Email copied to clipboard!");
+      })
+      .catch((err) => {
+        alert("Failed to copy email: " + err);
+      });
   };
 
   return (
@@ -48,31 +50,24 @@ const ContactPage = () => {
                 You can reach out to me via this email
               </p>
               <div className="flex justify-left  items-center space-x-2">
-                <span className="text-xl sm:text-xl bg-gradient-to-r text-transparent bg-clip-text from-[#1CB5E0] to-[#000851] ">
-                  {email}
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={copyEmail}
-                    className="text-cyan-400/40 hover:text-purple-700  "
-                  >
-                    {copied ? (
-                      <Check className="h-5 w-5 text-green-500" />
-                    ) : (
-                      <Copy className="h-5 w-5 text-cyan-300 " />
-                    )}
-                  </Button>
+                <span
+                  className="mt-2 text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#2f3ca9] cursor-pointer"
+                  onClick={handleCopy}
+                >
+                  bhavanajami111@gmail.com <span className="text-xs">(Click to copy)</span>
                 </span>
               </div>
             </div>
-            <Socials/>
-           
+            <Socials />
           </motion.div>
         </div>
       </main>
       <footer className="py-6 pt-28 text-left  text-zinc-500 text-sm sm:text-center">
         <p>
-          © 2025 <a href="#">Bhavana Jami</a>. All rights reserved.
+          © 2025{" "}
+          <a href="https://www.linkedin.com/in/bhavana-jami-47a6081b2/">
+            Bhavana Jami
+          </a>
         </p>
       </footer>
     </div>

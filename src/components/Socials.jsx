@@ -8,7 +8,6 @@ import {
     Instagram,
     Copy,
     Check,
-    quora,
   } from "lucide-react";
 const socialLinks = [
 

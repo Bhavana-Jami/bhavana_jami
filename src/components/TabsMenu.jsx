@@ -15,7 +15,7 @@ const TabsMenu = () => {
   const tabs = [
     { id: "projects", label: "Projects", path: "projectsArchive" },
     { id: "about", label: "About", path: "about" },
-    { id: "contact", label: "Contact", path: "/" },
+    { id: "contact", label: "Blog", path: "blog" },
   ];
 
   const scrollToSection = (sectionId) => {

@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bento-grid {
+    @apply columns-1 sm:columns-3 lg:columns-3 gap-2;
+  }
+
+  .bento-grid > * {
+    @apply mb-2 break-inside-avoid;
+  }
+}
+
+/* Smooth transition for dark mode */
+* {
+  @apply transition-colors duration-200;
+}
+
+
 .App {
   font-family: "Montserrat", sans-serif;
   display: flex;
@@ -17,4 +37,3 @@
   flex-direction: column;
   /* padding: 2rem 2rem; */
 }
-
