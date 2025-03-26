@@ -49,7 +49,7 @@ const Hero = () => {
           ✦ Frontend developer ✦ 2 years of professional experience ✦ Ah, I do
           write at &nbsp;
           <a
-            href="#"
+            href="https://iambluewonk.com/"
             style={{
               borderBottom: "1px solid #00c7ff",
               paddingBottom: "0.1rem",

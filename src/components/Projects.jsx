@@ -7,19 +7,19 @@ import aum_yoga from "../assets/aum_yoga.png";
 import bluewonk from "../assets/bluewonk.png";
 
 const projects = [
-  {
-    id: 1,
-    title: "Portfolio",
-    description:
-      "Showcasing my design and development journey with a personal touch. Built using ReactJS, Bootstrap, and CSS for a responsive and visually engaging design.",
-    oneLiner:
-      "A visually engaging portfolio to highlight my skills and projects.",
-    image: trigli ,
-    tech: "ReactJS • Bootstrap • CSS",
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://yourportfolio.com",
-    variant: "dark",
-  },
+  // {
+  //   id: 1,
+  //   title: "Portfolio",
+  //   description:
+  //     "Showcasing my design and development journey with a personal touch. Built using ReactJS, Bootstrap, and CSS for a responsive and visually engaging design.",
+  //   oneLiner:
+  //     "A visually engaging portfolio to highlight my skills and projects.",
+  //   image: trigli ,
+  //   tech: "ReactJS • Bootstrap • CSS",
+  //   github: "https://github.com/yourusername/portfolio",
+  //   demo: "https://yourportfolio.com",
+  //   variant: "dark",
+  // },
   {
     id: 2,
     title: "Trigli",
@@ -41,7 +41,7 @@ const projects = [
     image: bluewonk,
     tech: "ReactJS • Bootstrap",
     github: "https://github.com/Bhavana-Jami/bluewonk",
-    demo: "https://bluewonk-94503.web.app/",
+    demo: "http://iambluewonk.com",
     variant: "light",
   },
   {
@@ -56,43 +56,8 @@ const projects = [
     demo: "https://aum-yoga.vercel.app/",
     variant: "dark",
   },
-  {
-    id: 1,
-    title: "Portfolio",
-    description:
-      "Showcasing my design and development journey with a personal touch. Built using ReactJS, Bootstrap, and CSS for a responsive and visually engaging design.",
-    oneLiner:
-      "A visually engaging portfolio to highlight my skills and projects.",
-    // image: { trigli },
-    tech: "ReactJS • Bootstrap • CSS",
-    github: "https://github.com/yourusername/portfolio",
-    demo: "https://yourportfolio.com",
-    variant: "dark",
-  },
-  {
-    id: 2,
-    title: "Trigli",
-    description:
-      "A journal app to track your emotional triggers and uplifting moments. Built with ReactJS and Bootstrap for a seamless user experience.",
-    oneLiner: "An emotional trigger and mood journal app.",
-    // image: trigli,
-    tech: "ReactJS • Bootstrap",
-    github: "https://github.com/Bhavana-Jami/trigli",
-    demo: "https://trigli.vercel.app/",
-    variant: "medium",
-  },
-  {
-    id: 3,
-    title: "Blue Wonk",
-    description:
-      "A blog space where I share my thoughts, ideas, and passions. Created with ReactJS and Bootstrap for a clean and minimal design.",
-    oneLiner: "A personal blog to share thoughts and passions.",
-    // image: bluewonk,
-    tech: "ReactJS • Bootstrap",
-    github: "https://github.com/Bhavana-Jami/bluewonk",
-    demo: "https://bluewonk-94503.web.app/",
-    variant: "light",
-  },
+
+ 
 ];
 
 export default function Projects() {

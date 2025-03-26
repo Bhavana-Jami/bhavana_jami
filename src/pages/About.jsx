@@ -28,7 +28,7 @@ export default function AboutPage() {
           <h3 className="text-xl font-bold text-left  mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
             A lil about me
           </h3>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-xl max-w-3xl">
             I believe I'm a creative/artistic human being,being a computer
             science student I find web development as tool to express myself by
             creating beautiful and functional websites.
@@ -42,12 +42,12 @@ export default function AboutPage() {
           <h3 className="text-xl font-bold text-left  mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
             Work Experience
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-3xl">
             <div className="border-l-2 border-[#1CB5E0] pl-4">
               <h3 className="text-lg font-medium">Frontend Developer</h3>
               <p className="text-gray-400">Tata Consultancy Services</p>
               <p className="text-gray-500 text-sm">2021 - Present</p>
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 text-xl">
                 I am currently working in TCS, Chennai as Frontend Developer for
                 Lloyds Banking Group client. I worked on legacy systems by
                 rewriting the applications using ReactJS.
@@ -59,7 +59,7 @@ export default function AboutPage() {
           <h3 className="text-xl font-bold text-left  mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
             I use AI
           </h3>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-xl max-w-3xl">
             Since the rise AI tools like ChatGPT, Vercel V0 I have started to
             leverage them to make development easier and faster by automating
             repetitive tasks so that I don't have to start every project from
