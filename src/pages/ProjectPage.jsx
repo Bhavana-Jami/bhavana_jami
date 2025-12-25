@@ -20,6 +20,10 @@ import Footer from "../components/Footer";
 export default function ProjectPage() {
   const location = useLocation();
   const project = location.state.project;
+
+  useEffect(() => {
+    track('Page_View', { path: location.pathname });
+  }, [location]);
   return (
     <div className="min-h-screen max-w-4xl  text-white py-8 ml-2 mr-2">
       {/* Project Header */}
@@ -36,34 +40,34 @@ export default function ProjectPage() {
             </h2>
             <p className="text-gray-400 mt-2 ">{project.oneLiner}</p>
           </div>
-          
-        <div
-          className="mt-8 flex items-left space-x-6  pb-3
+
+          <div
+            className="mt-8 flex items-left space-x-6  pb-3
         "
-          style={{ borderBottom: "1px solid #2f393f" }}
-        >
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white flex items-center space-x-2"
+            style={{ borderBottom: "1px solid #2f393f" }}
           >
-            <ExternalLink className="w-5 h-5" />
-            <span>Demo</span>
-          </a>
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white flex items-center space-x-2"
-          >
-            <Github className="w-5 h-5" />
-            <span>Github</span>
-          </a>
-        </div>
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center space-x-2"
+            >
+              <ExternalLink className="w-5 h-5" />
+              <span>Demo</span>
+            </a>
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center space-x-2"
+            >
+              <Github className="w-5 h-5" />
+              <span>Github</span>
+            </a>
+          </div>
         </div>
 
-        
+
       </div>
 
       {/* Hero Section */}
@@ -80,7 +84,7 @@ export default function ProjectPage() {
         </div>
       </div>
 
-     <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import resume from "../assets/resume.pdf";
 import "../styles/TabsMenu.css";
 import { Link } from "react-router-dom";
+import { track } from '@vercel/analytics';
 
 const TabsMenu = () => {
   const [activeSection, setActiveSection] = useState("projects");
@@ -62,6 +63,7 @@ const TabsMenu = () => {
           )}
           href={resume}
           download="BHAVANA_JAMI_2_YOE_TCS_FRONT_END_DEV.pdf"
+          onClick={() => track('Resume_Download')}
         >
           Resume
         </a>
