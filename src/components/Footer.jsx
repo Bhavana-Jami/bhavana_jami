@@ -3,44 +3,37 @@ import Socials from "./Socials";
 
 const Footer = () => {
   const year = new Date().getFullYear();
-  const handleCopy = () => {
-    const email = "bhavanajami111@gmail.com";
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        alert("Email copied to clipboard!");
-      })
-      .catch((err) => {
-        alert("Failed to copy email: " + err);
-      });
-  };
+
   return (
-    <div>
-      <footer className=" text-gray-500 text-left py-4 mt-16">
-        <h2 className="text-sm font-bold text-left  mb-5 text-gray-400 ">
-          Reach out to me here..
-        </h2>
-        <Socials />
-        <div className="mt-6">
-          <span>or</span> <br />
-          {/* <span className="mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851]">
-            bhavanajami111@gmail.com
-          </span> */}
-          <span
-            className=" text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#2f3ca9] cursor-pointer"
-            onClick={handleCopy}
-          >
-            bhavanajami111@gmail.com (Click to copy)
-          </span>
+    <footer
+      className="mt-16 pt-8 border-t border-gray-800 text-left"
+      role="contentinfo"
+      style={{ borderTop: "1px solid #2f393f" }}
+    >
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div className="flex flex-col gap-4">
+          <div>
+            <div className="text-gray-500 text-sm  mb-4">
+              <p>
+                © {year}{" "}
+                <a
+                  href="https://www.linkedin.com/in/bhavanajami/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1CB5E0] hover:text-[#2dd4f0] transition-colors duration-200 "
+                  aria-label="Visit Bhavana Jami's LinkedIn profile (opens in new tab)"
+                >
+                  Bhavana Jami
+                </a>
+                . All rights reserved.
+              </p>
+            </div>
+            <Socials />
+          </div>
         </div>
-        <p className="mt-8">
-          © {year}{" "}
-          <a href="https://www.linkedin.com/in/bhavana-jami-47a6081b2/">
-            Bhavana Jami
-          </a>
-        </p>
-      </footer>
-    </div>
+
+      </div>
+    </footer>
   );
 };
 

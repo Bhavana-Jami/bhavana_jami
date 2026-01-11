@@ -1,24 +1,21 @@
 #contact {
   width: 100%;
   background-color: black;
+  position: relative;
+}
 
-  /* background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.850) 60%,
-    rgba(14, 17, 108, 0) 100%
+/* Subtle gradient overlay for depth */
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(28, 181, 224, 0.05) 0%,
+    rgba(0, 0, 0, 0) 70%
   );
-
-  background: -moz-radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.850) 60%,
-    rgba(14, 17, 108, 0) 100%
-  );
-
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.850) 60%,
-    rgba(14, 17, 108, 0) 100%
-  ); */
-
-  /* filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#0E116E", GradientType=1 ); */
+  pointer-events: none;
 }

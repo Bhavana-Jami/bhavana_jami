@@ -18,7 +18,7 @@ export function Navigation() {
 
   return (
     <>
-      <nav className="hidden md:flex items-center gap-4">
+      <nav className="hidden md:flex items-center gap-4" aria-label="Main navigation">
         {navItems.map((item) => (
           <Button
             key={item.name}
@@ -26,7 +26,7 @@ export function Navigation() {
             className="text-zinc-200 hover:text-white hover:bg-zinc-800"
             asChild
           >
-            <a href={item.href}>{item.name}</a>
+            <a href={item.href} aria-label={`Navigate to ${item.name} section`}>{item.name}</a>
           </Button>
         ))}
       </nav>
@@ -37,17 +37,21 @@ export function Navigation() {
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
         </Button>
 
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <motion.nav
+              id="mobile-menu"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               className="absolute top-16 left-0 right-0 bg-zinc-900 p-4 rounded-b-lg shadow-lg"
+              aria-label="Mobile navigation"
             >
               {navItems.map((item) => (
                 <Button
@@ -57,10 +61,10 @@ export function Navigation() {
                   asChild
                   onClick={() => setIsOpen(false)}
                 >
-                  <a href={item.href}>{item.name}</a>
+                  <a href={item.href} aria-label={`Navigate to ${item.name} section`}>{item.name}</a>
                 </Button>
               ))}
-            </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
       </div>

@@ -70,16 +70,18 @@ const socialLinks = [
   ];
 const Socials = () => {
   return (
-    <div className="flex justify-start   space-x-2 ">
+    <div className="flex justify-start items-center gap-4 flex-wrap">
       {socialLinks.map((link) => (
         <a
           key={link.name}
           href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="relative group"
-          aria-label={link.name}
+          aria-label={`Visit ${link.name} profile (opens in new tab)`}
         >
           <div className="absolute inset-0 bg-white/5 rounded-lg blur-lg transition-all group-hover:bg-white/10 group-hover:blur-xl" />
-          <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#1CB5E0]/40 to-[#000851]/40 shadow-lg backdrop-blur-sm transition-all group-hover:border-white/20 group-hover:from-white/15 group-hover:to-white/10">
+          <div className="relative flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#1CB5E0]/40 to-[#000851]/40 border border-[#1CB5E0]/30 shadow-lg backdrop-blur-sm transition-all group-hover:border-[#1CB5E0]/50 group-hover:from-[#1CB5E0]/50 group-hover:to-[#000851]/50 group-hover:scale-110">
             <link.icon className="w-6 h-6 text-white/80 transition-colors group-hover:text-white" />
           </div>
         </a>
