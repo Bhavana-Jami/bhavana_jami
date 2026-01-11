@@ -2,24 +2,25 @@ import { motion } from "framer-motion";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import "../styles/Projects.css";
 import { Link } from "react-router-dom";
-import trigli from "../assets/trigli.png";
 import aum_yoga from "../assets/aum_yoga.png";
 import bluewonk from "../assets/bluewonk.png";
-
+import pharma from "../assets/pharma-assist.png";
+import trigli from "../assets/trigli.png";
 const projects = [
-  // {
-  //   id: 1,
-  //   title: "Portfolio",
-  //   description:
-  //     "Showcasing my design and development journey with a personal touch. Built using ReactJS, Bootstrap, and CSS for a responsive and visually engaging design.",
-  //   oneLiner:
-  //     "A visually engaging portfolio to highlight my skills and projects.",
-  //   image: trigli ,
-  //   tech: "ReactJS • Bootstrap • CSS",
-  //   github: "https://github.com/yourusername/portfolio",
-  //   demo: "https://yourportfolio.com",
-  //   variant: "dark",
-  // },
+  {
+    id: 1,
+    title: "Pharma Assist",
+    description:
+      "A web application designed to assist pharmaceutical workflows by streamlining data access and interactions. Built with ReactJS and modern state management, the app focuses on clean UI, usability, and efficient handling of domain-specific data.",
+    oneLiner:
+      "A frontend-focused application to simplify pharmaceutical data workflows.",
+    image: pharma,
+    tech: "ReactJS • Redux Toolkit • Firebase • React Router DOM",
+    github: "https://github.com/Bhavana-Jami/pharma-assist",
+    demo: "https://pharma-assist-bice.vercel.app/",
+    variant: "dark",
+  }
+  ,
   {
     id: 2,
     title: "Trigli",
@@ -27,7 +28,7 @@ const projects = [
       "A journal app to track your emotional triggers and uplifting moments. Built with ReactJS and Bootstrap for a seamless user experience.",
     oneLiner: "An emotional trigger and mood journal app.",
     image: trigli,
-    tech: "ReactJS • Bootstrap",
+    tech: "ReactJS • Tailwind CSS",
     github: "https://github.com/Bhavana-Jami/trigli",
     demo: "https://trigli.vercel.app/",
     variant: "medium",
@@ -39,7 +40,7 @@ const projects = [
       "A blog space where I share my thoughts, ideas, and passions. Created with ReactJS and Bootstrap for a clean and minimal design.",
     oneLiner: "A personal blog to share thoughts and passions.",
     image: bluewonk,
-    tech: "ReactJS • Bootstrap",
+    tech: "ReactJS • Tailwind CSS • React Markdown",
     github: "https://github.com/Bhavana-Jami/bluewonk",
     demo: "http://iambluewonk.com",
     variant: "light",
@@ -51,15 +52,12 @@ const projects = [
       "A yoga session booking application for hassle-free scheduling and management. Built with ReactJS to provide users with an intuitive interface.",
     oneLiner: "A seamless yoga session booking application.",
     image: aum_yoga,
-    tech: "ReactJS",
+    tech: "ReactJS • Razorpay • Firebase • Tailwind CSS",
     github: "https://github.com/Bhavana-Jami/aum_yoga",
     demo: "https://aum-yoga.vercel.app/",
     variant: "dark",
   },
-
- 
 ];
-
 export default function Projects() {
   const variants = {
     dark: "bg-blue-dark text-white hover:bg-blue-dark/90",
@@ -71,9 +69,10 @@ export default function Projects() {
     <section
       className=" w-full relative overflow-hidden sm:px-20 px-7  mb-8 -mt-36"
       id="projects"
+      aria-labelledby="projects-heading"
     >
       <div className="max-w-7xl mx-auto relative">
-        <h2 className="text-3xl font-bold text-left  mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
+        <h2 id="projects-heading" className="text-3xl font-bold text-left  mb-12  text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851] ">
           Projects
         </h2>
 
@@ -81,7 +80,7 @@ export default function Projects() {
         <div
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] gap-2 sm:gap-4 mb-4 `}
         >
-          {projects.slice(0,4).map((project) => (
+          {projects.slice(0, 4).map((project) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -89,7 +88,7 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Link to={`projectPage/${project.id}`} state={{ project }}>
+              <Link to={`/projectPage/${project.id}`} state={{ project }}>
                 <div
                   className={`h-full w-full  overflow-hidden backdrop-blur-sm  rounded-sm transition-all duration-300 hover:scale-[1.02] ${variants[project.variant]}`}
                 >

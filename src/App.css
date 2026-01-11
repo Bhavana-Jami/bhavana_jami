@@ -1,13 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .bento-grid {
-    @apply columns-1 sm:columns-3 lg:columns-3 gap-2;
-  }
+    .bento-grid {
+      @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr;
+    }
+  
 
   .bento-grid > * {
     @apply mb-2 break-inside-avoid;

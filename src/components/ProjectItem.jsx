@@ -1,14 +1,19 @@
 import React from "react";
 // import Image from "next/image"
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 import imageUrl from "../assets/aum_yoga.png";
 export default function ProjectItem({
+  id,
   title,
   description,
   variant,
   oneLiner,
   tech,
+  image,
+  github,
+  demo,
 }) {
   const variants = {
     dark: "bg-blue-dark text-white hover:bg-blue-dark/90",
@@ -17,19 +22,33 @@ export default function ProjectItem({
     accent: "bg-blue-accent text-blue-dark hover:bg-blue-accent/90",
   };
 
+  const project = {
+    id,
+    title,
+    description,
+    variant,
+    oneLiner,
+    tech,
+    image,
+    github,
+    demo,
+  };
+
   return (
-    <div
-      className={`p-6 cursor-pointer rounded-sm transition-all duration-300 hover:scale-[1.02] ${variants[variant]}`}
-    >
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-sm opacity-90">{oneLiner}</p>
-      <p
-        className={`mb-2 text-xs bold mt-3 ${
-          variant === "accent" ? "text-black" : "text-[#00c7ff]"
-        }`}
+    <Link to={`/projectPage/${id}`} state={{ project }}>
+      <div
+        className={`p-6 cursor-pointer rounded-sm transition-all duration-300 hover:scale-[1.02] ${variants[variant]}`}
       >
-        {tech}
-      </p>
-    </div>
+        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <p className="text-sm opacity-90">{oneLiner}</p>
+        <p
+          className={`mb-2 text-xs bold mt-3 ${
+            variant === "accent" ? "text-black" : "text-[#00c7ff]"
+          }`}
+        >
+          {tech}
+        </p>
+      </div>
+    </Link>
   );
 }
