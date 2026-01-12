@@ -67,7 +67,7 @@ export default function Projects() {
   };
   return (
     <section
-      className=" w-full relative overflow-hidden sm:px-20 px-7  mb-8 -mt-36"
+      className=" w-full relative overflow-hidden px-16 mb-8 -mt-36"
       id="projects"
       aria-labelledby="projects-heading"
     >

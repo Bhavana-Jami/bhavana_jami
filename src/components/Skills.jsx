@@ -70,7 +70,7 @@ const SkillsPage = () => {
   
 
   return (
-    <section className="mt-12 w-full sm:px-20 px-7" id="skills" aria-labelledby="skills-heading">
+    <section className="mt-12 w-full px-16" id="skills" aria-labelledby="skills-heading">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h2 id="skills-heading" className="text-3xl font-bold text-left mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#1CB5E0] to-[#000851]">

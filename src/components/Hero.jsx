@@ -25,7 +25,7 @@ const Hero = () => {
 
   if (!isVisible) return null;
   return (
-    <main className="flex sm:px-20 px-7 " id="hero" role="main" aria-label="Hero section">
+    <main className="flex px-16" id="hero" role="main" aria-label="Hero section">
       <section className=" w-full flex flex-col items-left justify-center">
         <div className="relative inline-block -ms-20 " aria-label="Availability indicator">
           <Lottie
