@@ -146,13 +146,13 @@ const ContactPage = () => {
             </div>
 
             {/* Email Card */}
-            <motion.div
+            {/* <motion.div
               className="relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="relative rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm p-8 sm:p-10 hover:border-[#1CB5E0]/50 transition-all duration-300">
+            > */}
+              {/* <div className="relative rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm p-8 sm:p-10 hover:border-[#1CB5E0]/50 transition-all duration-300"> */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1CB5E0]/5 to-[#000851]/5 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative space-y-4">
                   <div className="flex items-center gap-3 mb-6">
@@ -200,8 +200,8 @@ const ContactPage = () => {
                     </button>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              {/* </div> */}
+            {/* </motion.div> */}
 
             {/* Social Links */}
             <motion.div
