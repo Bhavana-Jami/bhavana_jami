@@ -24,9 +24,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  padding: 0 !important;
-  margin: 0 !important;
+  width: 100%;
+  /* padding: 0 !important;
+  margin: 0 !important; */
   /* background-size: cover !important; */
   background-color: #000000;
   background-image: linear-gradient(to bottom, #000000 87%, rgba(0, 0, 0, 0)),
