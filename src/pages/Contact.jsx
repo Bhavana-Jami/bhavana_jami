@@ -22,7 +22,7 @@ const ContactPage = () => {
   const path = location.pathname;
   console.log(path);
   const isContactPage = path === "/contact";
-  const styleContactPage = isContactPage ? "min-h-screen p-8 max-w-5xl mx-auto text-white py-10 sm:px-6 lg:px-8 " : "text-zinc-100 min-h-screen flex flex-col items-start justify-center sm:px-20 px-7 py-16";
+  const styleContactPage = isContactPage ? "min-h-screen p-8 max-w-5xl mx-auto text-white py-10 sm:px-6 lg:px-8 " : "mt-12 w-full px-16" ;
   const handleCopy = () => {
     const email = "bhavana.jami9542@gmail.com";
     navigator.clipboard
