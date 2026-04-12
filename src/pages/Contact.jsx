@@ -227,7 +227,7 @@ const ContactPage = () => {
             <p className="text-zinc-500 text-sm">
               © 2026{" "}
               <a
-                href="https://www.linkedin.com/in/bhavana-jami-47a6081b2/"
+                href="https://www.linkedin.com/in/bhavanajami/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#1CB5E0] hover:text-[#2dd4f0] transition-colors duration-200"
