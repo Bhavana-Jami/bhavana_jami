@@ -46,12 +46,9 @@ export default function AboutPage() {
               <h3 className="text-lg font-medium">Frontend Engineer @ Tata Consultancy Services ( 2022 - Present )</h3>
               {/* <p className="text-gray-400">Tata Consultancy Services</p> */}
               <p className="text-gray-500 text-xl">
-                I work on internal applications for the Lloyds Banking Group,
-                modernizing legacy systems by rebuilding them with React. More
-                recently, I’ve been contributing to an internal AI-assisted
-                developer tool—working on both the frontend experience and the
-                logic that enables intelligent, guided outputs through prompts
-                and RAG-based workflows.
+                Frontend Engineer with 4 years of experience designing, building, and configuring large-scale React.js applications to meet business
+                process and application requirements. Proficient in React.js, component-based architecture, state management, RESTful APIs, Git, and
+                responsive/mobile-first development. My recent projects involves setting RAG and MCP Tooling for the GenAI Product that we are building internally.
               </p>
             </div>
           </div>
